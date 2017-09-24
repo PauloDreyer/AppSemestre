@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAvaliacao.Login">
+    <ContentPage.Content>
+        <StackLayout  Margin="50 ,0, 50, 0">
+            <StackLayout Padding="0 ,20, 0, 0">
+                <Image Source="logo.png" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Padding="0 ,20, 0, 0">
+                <Entry x:Name="email" Text="{Binding email}" Placeholder="E-mail" />
+                <Entry x:Name="senha" Text="{Binding senha}" Placeholder="Senha" IsPassword="True" />
+                <Button x:Name="logar" BackgroundColor="LimeGreen" Text="Logar" TextColor="White" Clicked="onClickLogar"/>
+                <Button x:Name="registrar" BackgroundColor="Blue" Text="Registre-se" TextColor="White" Clicked="onClickRegistar"/>
+                <Label x:Name="esqueciSenha" Text="Esqueci minha Senha" TextColor="CadetBlue" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -13,7 +13,7 @@ namespace AppAvaliacao
 		{
 			InitializeComponent();
 
-			MainPage = new AppAvaliacao.MainPage();
+            MainPage = new NavigationPage(new Login());
 		}
 
 		protected override void OnStart ()

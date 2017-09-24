@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AppAvaliacao"
              x:Class="AppAvaliacao.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+    <ContentPage.Content>
+        <StackLayout  Margin="50 ,40, 50, 0">
+            <Image Source="logo.png" VerticalOptions="Center"/>
+            <Entry x:Name="email" Text="{Binding email}" Placeholder="E-mail" />
+            <Entry x:Name="senha" Text="{Binding senha}" Placeholder="Senha" IsPassword="True" />
+            <Button x:Name="btnLogar" BackgroundColor="LimeGreen" Text="Logar" TextColor="White" Clicked="Logar"/>
+            <Button x:Name="btnRegistrar" BackgroundColor="Blue" Text="Registre-se" TextColor="White" Clicked="Registrar"/>
+            <Label x:Name="esqueciSenha" Text="Esqueci minha Senha" TextColor="CadetBlue" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

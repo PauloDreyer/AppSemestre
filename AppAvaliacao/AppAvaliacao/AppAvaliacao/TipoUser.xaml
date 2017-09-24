@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAvaliacao.TipoUser">
+    <ContentPage.Content>
+        <StackLayout Margin="50 ,0, 50, 0">
+            <StackLayout Padding="0 ,20, 0, 0">
+                <Image Source="logo.png" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Padding="0 ,40, 0, 0">
+                <Button x:Name="btnProfessor" BackgroundColor="Blue" Text="Professor" TextColor="White" Clicked="onClickProfessor"/>
+                <Button x:Name="btnAluno" BackgroundColor="Blue" Text="Aluno" TextColor="White" Clicked="onClickAluno"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

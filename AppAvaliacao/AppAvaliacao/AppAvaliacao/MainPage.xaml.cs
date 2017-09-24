@@ -13,5 +13,11 @@ namespace AppAvaliacao
 		{
 			InitializeComponent();
 		}
+
+        void onClick(object sender, EventArgs e)
+        {
+        
+            Navigation.PushAsync(new TipoUser(),true);
+        }
 	}
 }

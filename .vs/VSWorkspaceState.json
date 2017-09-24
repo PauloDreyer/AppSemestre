@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AppAvaliacao",
+    "\\AppAvaliacao\\AppAvaliacao",
+    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao",
+    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao.Android"
   ],
+  "SelectedNode": "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao",
   "PreviewInSolutionExplorer": false
 }
