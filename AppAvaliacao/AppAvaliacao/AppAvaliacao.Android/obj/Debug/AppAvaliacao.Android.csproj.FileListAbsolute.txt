@@ -51,6 +51,8 @@ D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\A
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.MasterDetailProfessor.xaml.g.cs
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.MasterDetailProfessorMaster.xaml.g.cs
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.MasterDetailProfessorDetail.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\res\drawable\home.png
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.MasterDetailTurma.xaml.g.cs
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.MasterDetailTurmaMaster.xaml.g.cs
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.MasterDetailTurmaDetail.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.NovaTurma.xaml.g.cs

@@ -15,6 +15,7 @@ namespace AppAvaliacao
 		public TipoUser ()
 		{
 			InitializeComponent ();
+            
 		}
 
         async void onClickProfessor(object sender, EventArgs e)

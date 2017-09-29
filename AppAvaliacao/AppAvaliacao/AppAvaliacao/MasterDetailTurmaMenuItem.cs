@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace AppAvaliacao
 {
 
-    public class MasterDetailProfessorMenuItem
+    public class MasterDetailTurmaMenuItem
     {
-        public MasterDetailProfessorMenuItem()
+        public MasterDetailTurmaMenuItem()
         {
-            TargetType = typeof(MasterDetailProfessorDetail);
+            TargetType = typeof(MasterDetailTurmaDetail);
         }
         public int Id { get; set; }
         public string Icon { get; set; }

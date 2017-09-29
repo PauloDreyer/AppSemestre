@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace AppAvaliacao
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MasterDetailProfessor : MasterDetailPage
+    public partial class MasterDetailTurma : MasterDetailPage
     {
-        public MasterDetailProfessor()
+        public MasterDetailTurma()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
@@ -21,7 +21,7 @@ namespace AppAvaliacao
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as MasterDetailProfessorMenuItem;
+            var item = e.SelectedItem as MasterDetailTurmaMenuItem;
             if (item == null)
                 return;
 
