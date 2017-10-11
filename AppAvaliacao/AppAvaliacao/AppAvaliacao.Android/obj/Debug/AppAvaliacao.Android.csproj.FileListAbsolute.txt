@@ -56,3 +56,12 @@ D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\A
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.MasterDetailTurmaMaster.xaml.g.cs
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.MasterDetailTurmaDetail.xaml.g.cs
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.NovaTurma.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\crypto.dll
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\Firebase.Xamarin.dll
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\JWT.dll
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\MySql.Data.CF.dll
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\Newtonsoft.Json.dll
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\System.Reactive.Core.dll
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\System.Reactive.Interfaces.dll
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\System.Reactive.Linq.dll
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\System.Reactive.PlatformServices.dll

@@ -16,6 +16,8 @@ namespace AppAvaliacao
 		{
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, true);
+            NavigationPage.SetHasBackButton(this, true);
+            
             
 		}
 

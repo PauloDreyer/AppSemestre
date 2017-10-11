@@ -49,6 +49,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)MasterDetailTurmaMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ConMySql.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Usuario.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NovaTurma.xaml.cs">
       <DependentUpon>NovaTurma.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -84,7 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Imagens\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)TipoUser.xaml">

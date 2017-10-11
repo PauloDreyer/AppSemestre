@@ -99,7 +99,16 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "AppAvaliacao.Android.dll" comes first in this list. */
 		"AppAvaliacao.Android.dll",
+		"crypto.dll",
+		"Firebase.Xamarin.dll",
 		"FormsViewGroup.dll",
+		"JWT.dll",
+		"MySql.Data.CF.dll",
+		"Newtonsoft.Json.dll",
+		"System.Reactive.Core.dll",
+		"System.Reactive.Interfaces.dll",
+		"System.Reactive.Linq.dll",
+		"System.Reactive.PlatformServices.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",
 		"Xamarin.Android.Support.v4.dll",
