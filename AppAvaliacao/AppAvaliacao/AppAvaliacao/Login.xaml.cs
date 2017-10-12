@@ -31,14 +31,23 @@ namespace AppAvaliacao
         {
             string p_email;
             string p_senha;
+            string p_tipo;
             conexao = new ConMySql();
             if (conexao.TryConnection(out error))
             {
                 p_email = this.email.Text;
                 p_senha = this.senha.Text;
-                if (conexao.Logar(p_email, p_senha))
+                if (conexao.Logar(p_email, p_senha, out p_tipo))
                 {
-                    await Navigation.PushAsync(new MasterDetailProfessor());
+                    if (p_tipo =="P")
+                    {
+                        await Navigation.PushAsync(new MasterDetailProfessor());
+                    }
+                    else if(p_tipo =="A")
+                    {
+                        await Navigation.PushAsync(new MasterDetailProfessor());
+                    }
+                    
                 }
             }
 
