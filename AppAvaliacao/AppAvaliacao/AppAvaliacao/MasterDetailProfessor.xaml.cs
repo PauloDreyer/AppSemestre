@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppAvaliacao.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,12 @@ namespace AppAvaliacao
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterDetailProfessor : MasterDetailPage
     {
+        private Usuario usuario = Usuario.Instancia;
+
         public MasterDetailProfessor()
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
-           
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 

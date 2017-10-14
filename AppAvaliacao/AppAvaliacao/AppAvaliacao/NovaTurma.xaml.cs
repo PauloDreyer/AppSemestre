@@ -14,16 +14,13 @@ namespace AppAvaliacao
 	{
 		public NovaTurma ()
 		{
-			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, true);
-            NavigationPage.SetHasBackButton(this, true);
-            
-            
+			InitializeComponent ();   
 		}
-
-        async void onClickCadastar(object sender, EventArgs e)
+        
+        private async void onClickCadastar(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MasterDetailTurma());
+           await Navigation.PushAsync(new MasterDetailTurma());
         }
+        
     }
 }

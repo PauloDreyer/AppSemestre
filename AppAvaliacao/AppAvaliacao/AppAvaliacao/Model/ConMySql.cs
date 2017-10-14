@@ -12,13 +12,14 @@ namespace AppAvaliacao.Model
         private MySqlConnection conexao;
         private MySqlCommand comando;
         private MySqlDataReader rdr;
+        private Usuario usuario = Usuario.Instancia;
         private string server = "sql10.freemysqlhosting.net";
-        private int port = 3306;
         private string dataBase = "sql10198781";
         private string userId = "sql10198781";
         private string password = "TV4aNJ9RFb";
 
 
+        //Método para estabelecer uma conexão.
         public bool TryConnection(out string Error)
         {
             Builder.Server = server;
@@ -42,6 +43,8 @@ namespace AppAvaliacao.Model
         
         }
 
+        //Método para inserir um usuário
+        //Implementado somente para o professor ainda
         public bool InsereUsuario(string nome, int matricula, string email, string senha, string tipo)
         {
             if(conexao.State == ConnectionState.Open)
@@ -66,7 +69,8 @@ namespace AppAvaliacao.Model
         }
         //
 
-        //
+        //Método para inserção de uma turma
+        //Não implementado ainda
         public bool InserirTurma(string nome, int professor)
         {
             if (conexao.State == ConnectionState.Open)
@@ -88,7 +92,7 @@ namespace AppAvaliacao.Model
         }
         //
 
-        //
+        //Método de Login 
         public bool Logar(string email, string senha, out string tipo)
         {
             tipo = "";
@@ -104,6 +108,9 @@ namespace AppAvaliacao.Model
                     while (rdr.Read())
                     {
                         tipo = rdr["tipo"].ToString();
+                        usuario.Id = rdr["id"].ToString();
+                        usuario.Email = email;
+                        usuario.Tipo = tipo;
                         return true;
                     }
                 }
@@ -119,6 +126,40 @@ namespace AppAvaliacao.Model
 
             }
             return false;
+        }
+
+
+        //Carrega lista de turmas do professor, na página inicial do professor
+        //Ainda não foi implementado.
+        public List<string> CarregaTurmas()
+        {
+            List<string> turmas = new List<string>();
+
+            if (conexao.State == ConnectionState.Open)
+            {
+                try
+                {
+                    comando = new MySqlCommand("SELECT id, nome FROM turmas WHERE id_professor = @id_professor", conexao);
+                    comando.Parameters.AddWithValue("@id_professor", usuario.Id);
+                    rdr = comando.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        turmas.Add(rdr["nome"].ToString());
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conexao.Close();
+                }
+            }
+
+            return turmas;
         }
 
     }

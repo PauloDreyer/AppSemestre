@@ -9,6 +9,8 @@ namespace AppAvaliacao
 {
 	public partial class App : Application
 	{
+        public static NavigationPage Navigation { get; internal set; }
+
 		public App ()
 		{
 			InitializeComponent();
