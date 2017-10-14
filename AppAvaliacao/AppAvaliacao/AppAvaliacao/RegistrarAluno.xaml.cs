@@ -44,7 +44,7 @@ namespace AppAvaliacao
                 {
                     Console.WriteLine("Erro: "+ error);
                 }
-                await Navigation.PushAsync(new TipoUser());
+                await Navigation.PushAsync(new Login());
             }
         }
     }
