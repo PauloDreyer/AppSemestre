@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Text;
 
@@ -44,7 +45,6 @@ namespace AppAvaliacao.Model
         }
 
         //Método para inserir um usuário
-        //Implementado somente para o professor ainda
         public bool InsereUsuario(string nome, int matricula, string email, string senha, string tipo)
         {
             if(conexao.State == ConnectionState.Open)
@@ -70,7 +70,6 @@ namespace AppAvaliacao.Model
         //
 
         //Método para inserção de uma turma
-        //Não implementado ainda
         public bool InserirTurma(string nome, int professor)
         {
             if (conexao.State == ConnectionState.Open)
@@ -127,13 +126,12 @@ namespace AppAvaliacao.Model
             }
             return false;
         }
-
+        //
 
         //Carrega lista de turmas do professor, na página inicial do professor
-        //Ainda não foi implementado.
-        public List<string> CarregaTurmas()
+        public ObservableCollection<ListaTurmas> CarregaTurmas()
         {
-            List<string> turmas = new List<string>();
+            ObservableCollection<ListaTurmas> ListaTurmas = new ObservableCollection<ListaTurmas>();
 
             if (conexao.State == ConnectionState.Open)
             {
@@ -145,7 +143,10 @@ namespace AppAvaliacao.Model
 
                     while (rdr.Read())
                     {
-                        turmas.Add(rdr["nome"].ToString());
+                        ListaTurmas turma = new ListaTurmas();
+                        turma.Id = rdr["id"].ToString();
+                        turma.Nome = rdr["nome"].ToString();
+                        ListaTurmas.Add(turma);
                     }
 
                 }
@@ -159,8 +160,9 @@ namespace AppAvaliacao.Model
                 }
             }
 
-            return turmas;
+            return ListaTurmas;
         }
+        //
 
     }
 }
