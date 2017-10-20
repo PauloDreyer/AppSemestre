@@ -8,7 +8,7 @@
                 <Image Source="logo.png" VerticalOptions="Center"/>
             </StackLayout>
             <StackLayout Padding="0 ,20, 0, 0">
-                <Entry x:Name="email" Text="{Binding email}" Placeholder="E-mail" />
+                <Entry x:Name="email" Text="{Binding email}" Placeholder="E-mail" Keyboard="Email"/>
                 <Entry x:Name="senha" Text="{Binding senha}" Placeholder="Senha" IsPassword="True" />
                 <Button x:Name="logar" BackgroundColor="LimeGreen" Text="Logar" TextColor="White" Clicked="onClickLogar"/>
                 <Button x:Name="registrar" BackgroundColor="Blue" Text="Registre-se" TextColor="White" Clicked="onClickRegistar"/>

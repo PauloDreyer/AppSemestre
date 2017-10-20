@@ -5,8 +5,8 @@
     <ContentPage.Content>
         <StackLayout  Margin="50 ,0, 50, 0">
             <StackLayout Padding="0 ,20, 0, 0">
-                <Entry x:Name="nome" Text="{Binding nome}" Placeholder="Nome Completo"/>
-                <Entry x:Name="email" Text="{Binding email}" Placeholder="E-mail" />
+                <Entry x:Name="nome" Text="{Binding nome}" Placeholder="Nome Completo" Keyboard="Text"/>
+                <Entry x:Name="email" Text="{Binding email}" Placeholder="E-mail" Keyboard="Email"/>
                 <Entry x:Name="senha" Text="{Binding senha}" Placeholder="Senha" IsPassword="True" />
                 <Entry x:Name="ConfSenha" Text="{Binding ConfSenha}" Placeholder="Confirme a senha" IsPassword="True" />
                 <Button x:Name="btnCriar" BackgroundColor="LimeGreen" Text="Criar" TextColor="White" Clicked="onClickCriar"/>

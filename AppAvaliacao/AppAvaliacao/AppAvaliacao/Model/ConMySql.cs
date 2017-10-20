@@ -15,9 +15,9 @@ namespace AppAvaliacao.Model
         private MySqlDataReader rdr;
         private Usuario usuario = Usuario.Instancia;
         private string server = "sql10.freemysqlhosting.net";
-        private string dataBase = "sql10198781";
-        private string userId = "sql10198781";
-        private string password = "TV4aNJ9RFb";
+        private string dataBase = "sql10200357";
+        private string userId = "sql10200357";
+        private string password = "b5xGJnTu3g";
 
 
         //Método para estabelecer uma conexão.
@@ -72,13 +72,16 @@ namespace AppAvaliacao.Model
         //Método para inserção de uma turma
         public bool InserirTurma(string nome, int professor)
         {
+            Random numRand = new Random();
+            int numeroTurma = numRand.Next(1000, 10000);
             if (conexao.State == ConnectionState.Open)
             {
                 try
                 {
-                    comando = new MySqlCommand("INSERT INTO turmas(id, nome, id_professor) VALUES(NULL, @nome, @id_professor)", conexao);
+                    comando = new MySqlCommand("INSERT INTO turmas(id, nome, id_professor, numero_turma) VALUES(NULL, @nome, @id_professor, @numero_turma)", conexao);
                     comando.Parameters.AddWithValue("@nome", nome);
                     comando.Parameters.AddWithValue("@id_professor", professor);
+                    comando.Parameters.AddWithValue("@numero_turma", numeroTurma);
                     comando.ExecuteNonQuery();
 
                 }
