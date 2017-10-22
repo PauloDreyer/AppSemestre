@@ -21,7 +21,6 @@ D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\X
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\Xamarin.Forms.Platform.Android.pdb
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\Xamarin.Forms.Xaml.pdb
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\Xamarin.Forms.Xaml.xml
-D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Android.csprojResolveAssemblyReference.cache
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Android.dll
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Android.pdb
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\bin\AppAvaliacao.Android.apk
@@ -35,12 +34,6 @@ D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\F
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\Xamarin.Forms.Core.dll.mdb
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\Xamarin.Forms.Xaml.dll.mdb
-D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\AppAvaliacao.Android.dll.mdb
-D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\AppAvaliacao.Android.dll.mdb
-D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\FormsViewGroup.dll.mdb
-D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
-D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
-D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\res\drawable\logo.png
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\res\drawable\home.png
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\crypto.dll
@@ -65,3 +58,11 @@ D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\A
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.MasterDetailTurmaMaster.xaml.g.cs
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.MasterDetailTurmaDetail.xaml.g.cs
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.NovaTurma.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\bin\Debug\AppAvaliacao.Android.dll.mdb
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\AppAvaliacao.Android.dll.mdb
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\FormsViewGroup.dll.mdb
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Android.csprojResolveAssemblyReference.cache
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.Model.NovaTarefa.xaml.g.cs

@@ -13,8 +13,7 @@ namespace AppAvaliacao
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NovaTurma : ContentPage
 	{
-        private ConMySql conexao;
-        private string error;
+        private TurmaDAO turmaDAO = new TurmaDAO();
         private Usuario professor = Usuario.Instancia;
         private string p_nome;
         private int p_id_professor;
@@ -26,23 +25,17 @@ namespace AppAvaliacao
         
         private async void onClickCadastar(object sender, EventArgs e)
         {
-            conexao = new ConMySql();
-
-            if (conexao.TryConnection(out error))
+            p_nome = this.nome.Text;
+            p_id_professor = Convert.ToInt32(professor.Id);
+            if (turmaDAO.Inserir(p_nome, p_id_professor))
             {
-                p_nome = this.nome.Text;
-                p_id_professor = Convert.ToInt32(professor.Id);
-                if (conexao.InserirTurma(p_nome, p_id_professor))
-                {
-                    Console.WriteLine("Turma Cadastrada!");
-                }
-                else
-                {
-                    Console.WriteLine("Erro: " + error);
-                }
-                await Navigation.PushAsync(new MasterDetailProfessor());
+                Console.WriteLine("Turma Cadastrada!");
             }
+            else
+            {
+                Console.WriteLine("Erro ao cadastrar Turma!");
+            }
+            await Navigation.PushAsync(new MasterDetailProfessor());
         }
-        
     }
 }

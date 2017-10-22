@@ -14,33 +14,18 @@ namespace AppAvaliacao
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterDetailProfessorDetail : ContentPage
     {
-        private ConMySql conexao;
-        private string error;
+       // private UsuarioDAO usuarioDAO = new UsuarioDAO();
+        private TurmaDAO turmaDAO = new TurmaDAO();
 
         public MasterDetailProfessorDetail()
         {
-            //List<ListaTurmas> turmas = new List<ListaTurmas>();
-            ObservableCollection<ListaTurmas> turmas = new ObservableCollection<ListaTurmas>();
             InitializeComponent();
-           
-            conexao = new ConMySql();
-            if (conexao.TryConnection(out error))
-            {
-                turmas =  conexao.CarregaTurmas();
-            }
-            else
-            {
-                DisplayAlert("Error: ", error, "C");
-            }
-
-            lvTurmas.ItemsSource = turmas;
-
+            lvTurmas.ItemsSource = turmaDAO.CarregaTurmas();
         }
 
         private void LvTurmas_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var itemSelected = (ListaTurmas)e.SelectedItem;
-            Console.WriteLine(itemSelected.Nome);
             Navigation.PushAsync(new MasterDetailTurma());
         }
 

@@ -9,6 +9,15 @@
     <Import_RootNamespace>AppAvaliacao</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\NovaTarefa.xaml.cs">
+      <DependentUpon>NovaTarefa.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Tarefa.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\TarefaDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Turma.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\TurmaDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\UsuarioDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -87,7 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Imagens\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewController\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\TipoUser.xaml">
@@ -145,6 +153,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\NovaTurma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Model\NovaTarefa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

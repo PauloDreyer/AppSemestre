@@ -13,7 +13,7 @@ namespace AppAvaliacao
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RegistrarProfessor : ContentPage
     {
-        private ConMySql conexao;
+        private UsuarioDAO usuarioDAO = new UsuarioDAO();
         private string error;
         private string p_nome;
         private int p_matricula;
@@ -27,25 +27,20 @@ namespace AppAvaliacao
 		}
 
         async void onClickCriar(object sender, EventArgs e)
-        {
-            conexao = new ConMySql();
-
-            if (conexao.TryConnection(out error))
+        { 
+            p_nome = this.nome.Text;
+            p_matricula = 0;
+            p_email = this.email.Text;
+            p_senha = this.senha.Text;
+            if (usuarioDAO.Inserir(p_nome, p_matricula, p_email, p_senha, p_tipo))
             {
-                p_nome = this.nome.Text;
-                p_matricula = 0;
-                p_email = this.email.Text;
-                p_senha = this.senha.Text;
-                if (conexao.InsereUsuario(p_nome, p_matricula, p_email, p_senha, p_tipo))
-                {
-                    Console.WriteLine("Usuário Cadastrado!");
-                }
-                else
-                {
-                    Console.WriteLine("Erro: " + error);
-                }
-                await Navigation.PushAsync(new Login());
+                Console.WriteLine("Usuário Cadastrado!");
             }
+            else
+            {
+                Console.WriteLine("Erro ao cadastrar usuário!");
+            }
+            await Navigation.PushAsync(new Login());
         }
     }
 }
