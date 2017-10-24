@@ -10,9 +10,11 @@ namespace AppAvaliacao.Model
         private string id;
         private string nome;
         private string id_professor;
+        private string idInscricao;
 
         public string Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Id_professor { get => id_professor; set => id_professor = value; }
+        public string IdInscricao { get => idInscricao; set => idInscricao = value; }
     }
 }

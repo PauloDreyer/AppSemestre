@@ -16,6 +16,7 @@ namespace AppAvaliacao
     {
        // private UsuarioDAO usuarioDAO = new UsuarioDAO();
         private TurmaDAO turmaDAO = new TurmaDAO();
+        private Turma turma = Turma.Instancia;
 
         public MasterDetailProfessorDetail()
         {
@@ -26,6 +27,9 @@ namespace AppAvaliacao
         private void LvTurmas_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var itemSelected = (ListaTurmas)e.SelectedItem;
+            turma.Id = Convert.ToInt32(itemSelected.Id);
+            turma.Id_inscricao = Convert.ToInt32(itemSelected.IdInscricao);
+
             Navigation.PushAsync(new MasterDetailTurma());
         }
 

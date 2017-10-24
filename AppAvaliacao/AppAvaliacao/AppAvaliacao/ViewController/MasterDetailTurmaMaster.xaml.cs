@@ -34,10 +34,11 @@ namespace AppAvaliacao
             {
                 MenuItems = new ObservableCollection<MasterDetailTurmaMenuItem>(new[]
                 {
-                    new MasterDetailTurmaMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailProfessor)},
+                    new MasterDetailTurmaMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailTurma)},
                     new MasterDetailTurmaMenuItem { Id = 1, Icon = "home.png", Title = "Alunos", TargetType = typeof(NovaTurma)},
                     new MasterDetailTurmaMenuItem { Id = 2, Icon = "home.png", Title = "Tarefas", TargetType = typeof(NovaTarefa)},
                     new MasterDetailTurmaMenuItem { Id = 3, Icon = "home.png", Title = "Notas", TargetType = typeof(MasterDetailProfessor)},
+                    new MasterDetailTurmaMenuItem { Id = 4, Icon = "home.png", Title = "Código de Inscrição", TargetType = typeof(ExibirCodInsc)},
                 });
             }
             

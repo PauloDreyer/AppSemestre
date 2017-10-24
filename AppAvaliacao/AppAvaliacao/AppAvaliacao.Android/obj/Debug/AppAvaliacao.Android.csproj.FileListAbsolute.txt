@@ -65,4 +65,9 @@ D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\a
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Android.csprojResolveAssemblyReference.cache
-D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.Model.NovaTarefa.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.NovaTarefa.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.ExibirCodInsc.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.MasterDetailAluno.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.MasterDetailAlunoMaster.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.MasterDetailAlunoDetail.xaml.g.cs
+D:\GitHub\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.InscricaoTurma.xaml.g.cs

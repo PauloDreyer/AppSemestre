@@ -9,7 +9,31 @@
     <Import_RootNamespace>AppAvaliacao</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Model\NovaTarefa.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\InscricaoTurma.xaml.cs">
+      <DependentUpon>InscricaoTurma.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAluno.xaml.cs">
+      <DependentUpon>MasterDetailAluno.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoDetail.xaml.cs">
+      <DependentUpon>MasterDetailAlunoDetail.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoMaster.xaml.cs">
+      <DependentUpon>MasterDetailAlunoMaster.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoMenuItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\ExibirCodInsc.xaml.cs">
+      <DependentUpon>ExibirCodInsc.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ListaTarefas.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\NovaTarefa.xaml.cs">
       <DependentUpon>NovaTarefa.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -158,7 +182,37 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Model\NovaTarefa.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\NovaTarefa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\ExibirCodInsc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoMaster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\InscricaoTurma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

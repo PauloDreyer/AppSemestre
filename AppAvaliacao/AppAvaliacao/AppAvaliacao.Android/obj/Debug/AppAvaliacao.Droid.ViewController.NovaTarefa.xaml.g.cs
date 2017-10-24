@@ -11,8 +11,8 @@
 namespace AppAvaliacao.Model {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\GitHub\\AppSemestre\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao\\Model\\NovaTarefa.xam" +
-        "l")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\GitHub\\AppSemestre\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao\\ViewController\\NovaT" +
+        "arefa.xaml")]
     public partial class NovaTarefa : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

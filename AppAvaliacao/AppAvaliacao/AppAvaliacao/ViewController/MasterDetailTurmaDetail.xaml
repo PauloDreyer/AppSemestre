@@ -3,7 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppAvaliacao.MasterDetailTurmaDetail"
              Title="Turma">
-  <StackLayout Padding="10">
-    <Label Text="Programação para Internet II"/>
-  </StackLayout>
+    <StackLayout Padding="10">
+        <ListView x:Name="lvTarefas"
+                  SeparatorColor="GreenYellow"
+                  SeparatorVisibility="Default"
+                  BackgroundColor="White"
+                  ItemSelected="LvTarefas_OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Nome}"
+                        TextColor="Blue"
+                        />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace AppAvaliacao.Model
@@ -8,6 +9,7 @@ namespace AppAvaliacao.Model
     class TarefaDAO
     {
         private ConMySql conexao = ConMySql.Instancia;
+        private Turma turma = Turma.Instancia;
 
         //Método para inserção de uma turma
         public bool Inserir(string nome, /*DateTime dataEntrega,*/ int turma)
@@ -35,26 +37,26 @@ namespace AppAvaliacao.Model
             return true;
         }
         //
-        /*
-        //Carrega lista de turmas do professor, na página inicial do professor
-        public ObservableCollection<ListaTurmas> CarregaTurmas()
+        
+        //Carrega lista de tarefas da turma, na página inicial da turma
+        public ObservableCollection<ListaTarefas> CarregaTurmas()
         {
-            ObservableCollection<ListaTurmas> ListaTurmas = new ObservableCollection<ListaTurmas>();
+            ObservableCollection<ListaTarefas> ListaTurmas = new ObservableCollection<ListaTarefas>();
 
             if (conexao.getConexao())
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT id, nome FROM turma WHERE id_professor = @id_professor", conexao.Conexao);
-                    conexao.Comando.Parameters.AddWithValue("@id_professor", usuario.Id);
+                    conexao.Comando = new MySqlCommand("SELECT id, nome FROM tarefa WHERE id_turma = @id_turma", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id_turma", turma.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
                     while (conexao.Rdr.Read())
                     {
-                        ListaTurmas turma = new ListaTurmas();
-                        turma.Id = conexao.Rdr["id"].ToString();
-                        turma.Nome = conexao.Rdr["nome"].ToString();
-                        ListaTurmas.Add(turma);
+                        ListaTarefas tarefas = new ListaTarefas();
+                        tarefas.Id = conexao.Rdr["id"].ToString();
+                        tarefas.Nome = conexao.Rdr["nome"].ToString();
+                        ListaTurmas.Add(tarefas);
                     }
 
                 }
@@ -69,6 +71,5 @@ namespace AppAvaliacao.Model
             }
             return ListaTurmas;
         }
-        */
     }
 }

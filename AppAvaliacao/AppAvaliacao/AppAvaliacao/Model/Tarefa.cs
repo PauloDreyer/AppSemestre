@@ -11,6 +11,21 @@ namespace AppAvaliacao.Model
         private DateTime dataEntrega;
         private int id_aluno;
         private string arquivo;
+        private static Tarefa instancia;
+
+        private Tarefa() { }
+
+        public static Tarefa Instancia
+        {
+            get
+            {
+                if (instancia == null)
+                {
+                    instancia = new Tarefa();
+                }
+                return instancia;
+            }
+        }
 
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }

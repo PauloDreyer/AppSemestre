@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAvaliacao.ExibirCodInsc">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="idInscricao" Text="{Binding IdInscricao}" TextColor="OrangeRed" FontSize="Large" HorizontalTextAlignment="Center" IsEnabled="False" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

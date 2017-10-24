@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AppAvaliacao.ViewController {
+namespace AppAvaliacao.Model {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\GitHub\\AppSemestre\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao\\ViewController\\NovaT" +
@@ -16,8 +16,16 @@ namespace AppAvaliacao.ViewController {
     public partial class NovaTarefa : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry nome;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button cadastrar;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(NovaTarefa));
+            nome = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "nome");
+            cadastrar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "cadastrar");
         }
     }
 }

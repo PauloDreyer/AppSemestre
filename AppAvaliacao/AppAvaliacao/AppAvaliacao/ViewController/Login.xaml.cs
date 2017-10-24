@@ -40,7 +40,7 @@ namespace AppAvaliacao
                 }
                 else if (p_tipo == "A")
                 {
-                    await Navigation.PushAsync(new MasterDetailProfessor());
+                    await Navigation.PushAsync(new MasterDetailAluno());
                 }       
             }
         }

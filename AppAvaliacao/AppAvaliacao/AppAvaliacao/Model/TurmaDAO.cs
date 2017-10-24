@@ -11,6 +11,39 @@ namespace AppAvaliacao.Model
         private ConMySql conexao = ConMySql.Instancia;
         private Usuario usuario = Usuario.Instancia;
 
+
+        public Turma GetTurmaByIdIsncricao(int idInscricao)
+        {
+            Turma turma = Turma.Instancia;
+
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("SELECT id, nome, id_professor FROM turma WHERE id_inscricao = @id_inscricao", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id_inscricao", idInscricao);
+                    conexao.Rdr = conexao.Comando.ExecuteReader();
+
+                    while (conexao.Rdr.Read())
+                    {
+                        turma.Id = Convert.ToInt32(conexao.Rdr["id"].ToString());
+                        turma.Nome = conexao.Rdr["nome"].ToString();
+                        turma.Id_professor = Convert.ToInt32(conexao.Rdr["id_professor"].ToString());
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return turma;
+        }
+
         //Método para inserção de uma turma
         public bool Inserir(string nome, int professor)
         {
@@ -41,6 +74,35 @@ namespace AppAvaliacao.Model
         }
         //
 
+        //Método para vincular um aluno a uma turma
+        public bool InserirAlunoTurma(int idInscricao, int idAluno)
+        {
+
+            int idTurma = GetTurmaByIdIsncricao(idInscricao).Id;
+
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("INSERT INTO turma_aluno(id_turma, id_aluno) VALUES(@id_turma, @id_aluno)", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id_turma", idTurma);
+                    conexao.Comando.Parameters.AddWithValue("@id_aluno", idAluno);
+                    conexao.Comando.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return true;
+        }
+        //
+
         //Carrega lista de turmas do professor, na página inicial do professor
         public ObservableCollection<ListaTurmas> CarregaTurmas()
         {
@@ -50,7 +112,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT id, nome FROM turma WHERE id_professor = @id_professor", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT id, nome, id_inscricao FROM turma WHERE id_professor = @id_professor", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_professor", usuario.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
@@ -59,6 +121,7 @@ namespace AppAvaliacao.Model
                         ListaTurmas turma = new ListaTurmas();
                         turma.Id = conexao.Rdr["id"].ToString();
                         turma.Nome = conexao.Rdr["nome"].ToString();
+                        turma.IdInscricao = conexao.Rdr["id_inscricao"].ToString();
                         ListaTurmas.Add(turma);
                     }
 
