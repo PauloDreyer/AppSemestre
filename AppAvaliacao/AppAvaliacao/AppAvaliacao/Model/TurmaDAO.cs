@@ -112,8 +112,15 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT id, nome, id_inscricao FROM turma WHERE id_professor = @id_professor", conexao.Conexao);
-                    conexao.Comando.Parameters.AddWithValue("@id_professor", usuario.Id);
+                    if (usuario.Tipo.Equals("P"))
+                    {
+                        conexao.Comando = new MySqlCommand("SELECT id, nome, id_inscricao FROM turma WHERE id_professor = @id", conexao.Conexao);
+                    }
+                    else
+                    {
+                        conexao.Comando = new MySqlCommand("SELECT id, nome, id_inscricao FROM turma t, turma_aluno ta WHERE t.id = ta.id_turma AND ta.id_aluno = @id", conexao.Conexao);
+                    }
+                    conexao.Comando.Parameters.AddWithValue("@id", usuario.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
                     while (conexao.Rdr.Read())

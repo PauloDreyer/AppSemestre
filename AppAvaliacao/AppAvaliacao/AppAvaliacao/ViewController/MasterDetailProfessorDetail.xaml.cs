@@ -14,7 +14,6 @@ namespace AppAvaliacao
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterDetailProfessorDetail : ContentPage
     {
-       // private UsuarioDAO usuarioDAO = new UsuarioDAO();
         private TurmaDAO turmaDAO = new TurmaDAO();
         private Turma turma = Turma.Instancia;
 

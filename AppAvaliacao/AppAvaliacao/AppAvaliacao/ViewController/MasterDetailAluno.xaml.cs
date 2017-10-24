@@ -14,6 +14,7 @@ namespace AppAvaliacao
     {
         public MasterDetailAluno()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }

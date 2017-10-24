@@ -47,7 +47,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT id, nome FROM tarefa WHERE id_turma = @id_turma", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT id, nome, 'Aberta' status FROM tarefa WHERE id_turma = @id_turma", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_turma", turma.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 

@@ -2,8 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppAvaliacao.MasterDetailAlunoDetail"
-             Title="Detail">
+             Title="Aluno">
   <StackLayout Padding="10">
-    <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Master' page with an Icon that references it."/>
-  </StackLayout>
+        <ListView x:Name="lvTurmas"
+                  SeparatorColor="GreenYellow"
+                  SeparatorVisibility="Default"
+                  BackgroundColor="White"
+                  ItemSelected="LvTurmas_OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Nome}"
+                        TextColor="Blue"
+                        />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
