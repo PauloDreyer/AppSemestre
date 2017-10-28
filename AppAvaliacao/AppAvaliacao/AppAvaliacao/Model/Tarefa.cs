@@ -8,6 +8,7 @@ namespace AppAvaliacao.Model
     {
         private int id;
         private string nome;
+        private String descricao;
         private DateTime dataEntrega;
         private int id_aluno;
         private string arquivo;
@@ -32,5 +33,6 @@ namespace AppAvaliacao.Model
         public DateTime DataEntrega { get => dataEntrega; set => dataEntrega = value; }
         public int Id_aluno { get => id_aluno; set => id_aluno = value; }
         public string Arquivo { get => arquivo; set => arquivo = value; }
+        public string Descricao { get => descricao; set => descricao = value; }
     }
 }

@@ -9,31 +9,46 @@
     <Import_RootNamespace>AppAvaliacao</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\InscricaoTurma.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessor.xaml.cs">
+      <DependentUpon>MasterDetailTarefaProfessor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessorDetail.xaml.cs">
+      <DependentUpon>MasterDetailTarefaProfessorDetail.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessorMaster.xaml.cs">
+      <DependentUpon>MasterDetailTarefaProfessorMaster.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessorMenuItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\InscricaoTurma.xaml.cs">
       <DependentUpon>InscricaoTurma.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAluno.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MasterDetailAluno.xaml.cs">
       <DependentUpon>MasterDetailAluno.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoDetail.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MasterDetailAlunoDetail.xaml.cs">
       <DependentUpon>MasterDetailAlunoDetail.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoMaster.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MasterDetailAlunoMaster.xaml.cs">
       <DependentUpon>MasterDetailAlunoMaster.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoMenuItem.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MasterDetailAlunoMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\ExibirCodInsc.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\ExibirCodInsc.xaml.cs">
       <DependentUpon>ExibirCodInsc.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\ListaTarefas.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\NovaTarefa.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\NovaTarefa.xaml.cs">
       <DependentUpon>NovaTarefa.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -42,177 +57,200 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Turma.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\TurmaDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\UsuarioDAO.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\App.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\App\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Login.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\App\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MainPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\App\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailProfessor.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Professor\MasterDetailProfessor.xaml.cs">
       <DependentUpon>MasterDetailProfessor.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailProfessorDetail.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Professor\MasterDetailProfessorDetail.xaml.cs">
       <DependentUpon>MasterDetailProfessorDetail.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailProfessorMaster.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Professor\MasterDetailProfessorMaster.xaml.cs">
       <DependentUpon>MasterDetailProfessorMaster.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailProfessorMenuItem.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Professor\MasterDetailProfessorMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailTurma.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\MasterDetailTurma.xaml.cs">
       <DependentUpon>MasterDetailTurma.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailTurmaDetail.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\MasterDetailTurmaDetail.xaml.cs">
       <DependentUpon>MasterDetailTurmaDetail.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailTurmaMaster.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\MasterDetailTurmaMaster.xaml.cs">
       <DependentUpon>MasterDetailTurmaMaster.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailTurmaMenuItem.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\MasterDetailTurmaMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\ConMySql.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\ListaTurmas.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Usuario.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\NovaTurma.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\NovaTurma.xaml.cs">
       <DependentUpon>NovaTurma.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\RegistrarAluno.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Aluno\RegistrarAluno.xaml.cs">
       <DependentUpon>RegistrarAluno.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\RegistrarProfessor.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Professor\RegistrarProfessor.xaml.cs">
       <DependentUpon>RegistrarProfessor.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewController\TipoUser.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\App\TipoUser.xaml.cs">
       <DependentUpon>TipoUser.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MainPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\App\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\App.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\App\App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Login.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\App\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Imagens\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewController\Aluno\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewController\App\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewController\Turma\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewController\Professor\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\TipoUser.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\App\TipoUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\RegistrarProfessor.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Professor\RegistrarProfessor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\RegistrarAluno.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Aluno\RegistrarAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailProfessor.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Professor\MasterDetailProfessor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailProfessorMaster.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Professor\MasterDetailProfessorMaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailProfessorDetail.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Professor\MasterDetailProfessorDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailTurma.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Turma\MasterDetailTurma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailTurmaMaster.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Turma\MasterDetailTurmaMaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailTurmaDetail.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Turma\MasterDetailTurmaDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\NovaTurma.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Turma\NovaTurma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\NovaTarefa.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\NovaTarefa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\ExibirCodInsc.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Turma\ExibirCodInsc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAluno.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MasterDetailAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoMaster.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MasterDetailAlunoMaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\MasterDetailAlunoDetail.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MasterDetailAlunoDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\InscricaoTurma.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Turma\InscricaoTurma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessorMaster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessorDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
