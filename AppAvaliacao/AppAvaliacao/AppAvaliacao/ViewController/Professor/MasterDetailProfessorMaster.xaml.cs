@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppAvaliacao.ViewController.Professor;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -35,7 +36,7 @@ namespace AppAvaliacao
                 {
                     new MasterDetailProfessorMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailProfessor)},
                     new MasterDetailProfessorMenuItem { Id = 1, Icon = "Icon.png", Title = "Cadastar Turma", TargetType = typeof(NovaTurma)},
-                    new MasterDetailProfessorMenuItem { Id = 2, Icon = "home.png", Title = "Meus Dados", TargetType = typeof(TipoUser)},
+                    new MasterDetailProfessorMenuItem { Id = 2, Icon = "home.png", Title = "Meus Dados", TargetType = typeof(MeusDadosProfessor)},
                     new MasterDetailProfessorMenuItem { Id = 3, Icon = "home.png", Title = "Sair" },
                 });
             }

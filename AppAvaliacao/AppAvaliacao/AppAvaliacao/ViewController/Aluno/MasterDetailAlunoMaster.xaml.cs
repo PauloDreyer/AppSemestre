@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppAvaliacao.ViewController.Aluno;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -35,7 +36,7 @@ namespace AppAvaliacao
                 {
                     new MasterDetailAlunoMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailAluno)},
                     new MasterDetailAlunoMenuItem { Id = 1, Icon = "Icon.png", Title = "Inscrição Turma", TargetType = typeof(InscricaoTurma)},
-                    new MasterDetailAlunoMenuItem { Id = 2, Icon = "home.png", Title = "Meus Dados", TargetType = typeof(TipoUser)},
+                    new MasterDetailAlunoMenuItem { Id = 2, Icon = "home.png", Title = "Meus Dados", TargetType = typeof(MeusDadosAluno)},
                     new MasterDetailAlunoMenuItem { Id = 3, Icon = "home.png", Title = "Sair" },
                 });
             }

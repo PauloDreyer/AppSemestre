@@ -9,6 +9,14 @@
     <Import_RootNamespace>AppAvaliacao</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MeusDadosAluno.xaml.cs">
+      <DependentUpon>MeusDadosAluno.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Professor\MeusDadosProfessor.xaml.cs">
+      <DependentUpon>MeusDadosProfessor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessor.xaml.cs">
       <DependentUpon>MasterDetailTarefaProfessor.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -135,11 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Imagens\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewController\Aluno\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewController\App\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewController\Turma\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewController\Professor\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\App\TipoUser.xaml">
@@ -251,6 +257,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessorDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MeusDadosAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Professor\MeusDadosProfessor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAvaliacao.ViewController.Professor.MeusDadosProfessor">
+    <ContentPage.Content>
+        <StackLayout  Margin="50 ,0, 50, 0">
+            <StackLayout Padding="0 ,10, 0, 0">
+                <Label Text="Nome" TextColor="Blue" FontSize="Large"/>
+                <Entry x:Name="nome" Text="{Binding nome}" Keyboard="Text"/>
+                <Label Text="Email" TextColor="Blue" FontSize="Large"/>
+                <Entry x:Name="email" Text="{Binding email}" Keyboard="Email"/>
+                <Label Text="Senha" TextColor="Blue" FontSize="Large"/>
+                <Entry x:Name="senha" Text="{Binding senha}" IsPassword="True" />
+                <Label Text="Confirmação da Senha" TextColor="Blue" FontSize="Large"/>
+                <Entry x:Name="confSenha" Text="{Binding confSenha}" IsPassword="True" />
+                <Button x:Name="btnAlterar" BackgroundColor="LimeGreen" Text="Alterar" TextColor="White" Clicked="onClickAlterar"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

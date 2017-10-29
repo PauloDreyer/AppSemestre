@@ -1,6 +1,5 @@
 ﻿using AppAvaliacao.Model;
 using System;
-using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,40 +8,44 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppAvaliacao
+namespace AppAvaliacao.ViewController.Aluno
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegistrarAluno : ContentPage
+    public partial class MeusDadosAluno : ContentPage
     {
+        private Usuario usuario = Usuario.Instancia;
         private UsuarioDAO usuarioDAO = new UsuarioDAO();
         private string p_nome;
         private int p_matricula;
         private string p_email;
         private string p_senha;
-        private string p_tipo = "A";
-
-        public RegistrarAluno()
+        public MeusDadosAluno()
         {
             InitializeComponent();
+            nome.Text = usuario.Nome;
+            matricula.Text = usuario.Matricula;
+            email.Text = usuario.Email;
+            senha.Text = usuario.Senha;
+            confSenha.Text = usuario.Senha;
+
         }
 
-        async void onClickCriar(object sender, EventArgs e)
+        async void onClickAlterar(object sender, EventArgs e)
         {
             p_nome = this.nome.Text;
             p_matricula = Convert.ToInt32(this.matricula.Text);
             p_email = this.email.Text;
             p_senha = this.senha.Text;
 
-            if (usuarioDAO.Inserir(p_nome, p_matricula, p_email, p_senha, p_tipo))
+            if (usuarioDAO.Alterar(p_nome, p_matricula, p_email, p_senha))
             {
-                Console.WriteLine("Usuário Cadastrado!");
+                Console.WriteLine("Usuário Alterado!");
             }
             else
             {
-                Console.WriteLine("Erro ao cadastrar usuário!");
+                Console.WriteLine("Erro ao alterar usuário!");
             }
-            await Navigation.PushAsync(new Login());
+            await Navigation.PushAsync(new MasterDetailAluno());
         }
-        
     }
 }
