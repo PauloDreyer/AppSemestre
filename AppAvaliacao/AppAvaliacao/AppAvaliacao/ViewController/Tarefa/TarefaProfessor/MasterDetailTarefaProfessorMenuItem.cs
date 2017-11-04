@@ -14,6 +14,7 @@ namespace AppAvaliacao.ViewController.Tarefa
             TargetType = typeof(MasterDetailTarefaProfessorDetail);
         }
         public int Id { get; set; }
+        public string Icon { get; set; }
         public string Title { get; set; }
 
         public Type TargetType { get; set; }

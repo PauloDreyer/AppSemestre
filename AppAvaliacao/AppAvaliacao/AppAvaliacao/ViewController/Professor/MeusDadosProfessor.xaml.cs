@@ -19,6 +19,7 @@ namespace AppAvaliacao.ViewController.Professor
         private int p_matricula;
         private string p_email;
         private string p_senha;
+        private string p_contraSenha;
 
         public MeusDadosProfessor ()
 		{
@@ -34,16 +35,21 @@ namespace AppAvaliacao.ViewController.Professor
             p_nome = this.nome.Text;
             p_email = this.email.Text;
             p_senha = this.senha.Text;
+            p_contraSenha = this.confSenha.Text;
             p_matricula = Convert.ToInt32(usuario.Matricula);
-            if (usuarioDAO.Alterar(p_nome, p_matricula, p_email, p_senha))
+
+            if (usuarioDAO.ValidarSenha(p_senha, p_contraSenha))
             {
-                Console.WriteLine("Usuário Alterado!");
+                if (usuarioDAO.Alterar(p_nome, p_matricula, p_email, p_senha))
+                {
+                    Console.WriteLine("Usuário Alterado!");
+                    await Navigation.PushAsync(new MasterDetailProfessor());
+                }
+                else
+                {
+                    Console.WriteLine("Erro ao alterar usuário!");
+                }
             }
-            else
-            {
-                Console.WriteLine("Erro ao alterar usuário!");
-            }
-            await Navigation.PushAsync(new MasterDetailProfessor());
         }
     }
 }

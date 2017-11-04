@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppAvaliacao.ViewController.Tarefa
+namespace AppAvaliacao.ViewController.Turma
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MasterDetailTarefaProfessorDetail : ContentPage
-    {
-        private TarefaDAO tarefaDAO = new TarefaDAO();
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class TurmaAlunos : ContentPage
+	{
+        private TurmaDAO turmaDAO = new TurmaDAO();
 
-        public MasterDetailTarefaProfessorDetail()
-        {
-            InitializeComponent();
-            labelDescricao.Text = tarefaDAO.getDescricaoTarefa();
-            lvTarefasPostadas.ItemsSource = tarefaDAO.CarregaTarefasPostadas();
+        public TurmaAlunos ()
+		{
+			InitializeComponent ();
+            lvTurmaAlunos.ItemsSource = turmaDAO.CarregaAlunos();
+
         }
 
-        private void LvTarefasPostadas_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void LvTurmaAlunos_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var itemSelected = (ListaTurmas)e.SelectedItem;
             /*

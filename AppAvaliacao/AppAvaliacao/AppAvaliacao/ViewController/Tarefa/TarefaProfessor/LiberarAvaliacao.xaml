@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAvaliacao.ViewController.Tarefa.TarefaProfessor.LiberarAvaliacao">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Liberar/Bloquear Tarefa" TextColor="Blue" FontSize="Large"/>
+            <Picker x:Name="Selecao"
+                    SelectedIndexChanged="Selecao_SelectedIndexChanged"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

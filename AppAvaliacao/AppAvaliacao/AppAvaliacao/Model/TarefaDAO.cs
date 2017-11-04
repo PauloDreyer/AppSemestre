@@ -11,24 +11,27 @@ namespace AppAvaliacao.Model
         private ConMySql conexao = ConMySql.Instancia;
         private Turma turma = Turma.Instancia;
         private Tarefa tarefa = Tarefa.Instancia;
+        private string p_opcao;
 
         //Método para inserção de uma turma
-        public bool Inserir(string nome, /*DateTime dataEntrega,*/ int turma)
+        public bool Inserir(string nome, string descricao /*DateTime dataEntrega,*/, int turma)
         {
             if (conexao.getConexao())
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("INSERT INTO tarefa(id, nome, descricao, data_entrega, id_turma) VALUES(NULL, @nome, @descricao, NULL, @id_turma)", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("INSERT INTO tarefa(id, nome, descricao, data_entrega, id_turma, status) VALUES(NULL, @nome, @descricao, NULL, @id_turma, @status)", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@nome", nome);
-                    conexao.Comando.Parameters.AddWithValue("@decricao", nome);
+                    conexao.Comando.Parameters.AddWithValue("@descricao", descricao);
                     //  conexao.Comando.Parameters.AddWithValue("@data_entrega", dataEntrega);
                     conexao.Comando.Parameters.AddWithValue("@id_turma", turma);
+                    conexao.Comando.Parameters.AddWithValue("@status", "A");
                     conexao.Comando.ExecuteNonQuery();
 
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.ToString());
                     return false;
                 }
                 finally
@@ -162,6 +165,42 @@ namespace AppAvaliacao.Model
                 }
             }
             return ListaTarefasPostadas;
+        }
+        //
+
+        //Método para Liberar/Bloquear Avaliação
+        public bool LibBloAvaliacao(string opcao)
+        {
+            if (conexao.getConexao())
+            {
+
+                if (opcao.Equals("Sim"))
+                {
+                    p_opcao = "S";
+                }
+                else
+                {
+                    p_opcao = "N";
+                }
+                try
+                {
+                    conexao.Comando = new MySqlCommand("UPDATE tarefa SET lib_avaliacao = @opcao WHERE id = @id", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@opcao", p_opcao);
+                    conexao.Comando.Parameters.AddWithValue("@id", tarefa.Id);
+                    conexao.Comando.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return false;
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return true;
         }
         //
     }

@@ -149,3 +149,5 @@ D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvali
 D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaProfessor.MasterDetailTarefaProfessorDetail.xaml.g.cs
 D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Aluno.MeusDadosAluno.xaml.g.cs
 D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Professor.MeusDadosProfessor.xaml.g.cs
+D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Turma.TurmaAlunos.xaml.g.cs
+D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaProfessor.LiberarAvaliacao.xaml.g.cs

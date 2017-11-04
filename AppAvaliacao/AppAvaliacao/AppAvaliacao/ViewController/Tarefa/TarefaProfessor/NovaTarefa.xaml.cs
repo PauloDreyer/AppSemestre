@@ -15,6 +15,7 @@ namespace AppAvaliacao.Model
         private TarefaDAO tarefaDAO = new TarefaDAO();
         private Turma turma = Turma.Instancia;
         private string p_nome;
+        private string p_descricao;
         private int p_id_turma;
 
         public NovaTarefa ()
@@ -25,8 +26,9 @@ namespace AppAvaliacao.Model
         private async void onClickCadastar(object sender, EventArgs e)
         {
             p_nome = this.nome.Text;
+            p_descricao = this.descricao.Text;
             p_id_turma = Convert.ToInt32(turma.Id);
-            if (tarefaDAO.Inserir(p_nome, p_id_turma))
+            if (tarefaDAO.Inserir(p_nome, p_descricao, p_id_turma))
             {
                 Console.WriteLine("Tarefa Cadastrada!");
             }

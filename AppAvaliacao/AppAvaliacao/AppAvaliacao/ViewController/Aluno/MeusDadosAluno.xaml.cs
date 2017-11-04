@@ -19,6 +19,8 @@ namespace AppAvaliacao.ViewController.Aluno
         private int p_matricula;
         private string p_email;
         private string p_senha;
+        private string p_contraSenha;
+
         public MeusDadosAluno()
         {
             InitializeComponent();
@@ -36,16 +38,20 @@ namespace AppAvaliacao.ViewController.Aluno
             p_matricula = Convert.ToInt32(this.matricula.Text);
             p_email = this.email.Text;
             p_senha = this.senha.Text;
+            p_contraSenha = this.confSenha.Text;
 
-            if (usuarioDAO.Alterar(p_nome, p_matricula, p_email, p_senha))
+            if (usuarioDAO.ValidarSenha(p_senha, p_contraSenha))
             {
-                Console.WriteLine("Usuário Alterado!");
+                if (usuarioDAO.Alterar(p_nome, p_matricula, p_email, p_senha))
+                {
+                    Console.WriteLine("Usuário Alterado!");
+                    await Navigation.PushAsync(new MasterDetailAluno());
+                }
+                else
+                {
+                    Console.WriteLine("Erro ao alterar usuário!");
+                }
             }
-            else
-            {
-                Console.WriteLine("Erro ao alterar usuário!");
-            }
-            await Navigation.PushAsync(new MasterDetailAluno());
         }
     }
 }

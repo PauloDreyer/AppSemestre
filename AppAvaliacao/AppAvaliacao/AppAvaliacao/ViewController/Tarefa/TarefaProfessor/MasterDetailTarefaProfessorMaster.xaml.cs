@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppAvaliacao.ViewController.Tarefa.TarefaProfessor;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -33,11 +34,11 @@ namespace AppAvaliacao.ViewController.Tarefa
             {
                 MenuItems = new ObservableCollection<MasterDetailTarefaProfessorMenuItem>(new[]
                 {
-                    new MasterDetailTarefaProfessorMenuItem { Id = 0, Title = "Page 1" },
-                    new MasterDetailTarefaProfessorMenuItem { Id = 1, Title = "Page 2" },
-                    new MasterDetailTarefaProfessorMenuItem { Id = 2, Title = "Page 3" },
-                    new MasterDetailTarefaProfessorMenuItem { Id = 3, Title = "Page 4" },
-                    new MasterDetailTarefaProfessorMenuItem { Id = 4, Title = "Page 5" },
+                    new MasterDetailTarefaProfessorMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailTarefaProfessor)},
+                    //new MasterDetailTarefaProfessorMenuItem { Id = 1, Icon = "home.png", Title = "Editar Tarefa", TargetType = typeof(TurmaAlunos)},
+                    new MasterDetailTarefaProfessorMenuItem { Id = 2, Icon = "home.png", Title = "Liberar/Bloquear Avaliação", TargetType = typeof(LiberarAvaliacao)},
+                    new MasterDetailTarefaProfessorMenuItem { Id = 3, Icon = "home.png", Title = "Notas", TargetType = typeof(MasterDetailProfessor)},
+                    new MasterDetailTarefaProfessorMenuItem { Id = 4, Icon = "home.png", Title = "Código de Inscrição", TargetType = typeof(ExibirCodInsc)},
                 });
             }
             

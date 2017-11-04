@@ -48,6 +48,17 @@ namespace AppAvaliacao.Model
         }
         //
 
+        //
+        public bool ValidarSenha(string p_senha, string p_contraSenha)
+        {
+            if (!p_senha.Equals(p_contraSenha))
+            {
+                return false;
+            }
+            return true;
+        }
+        //
+
         //Método de Login 
         public bool Logar(string email, string senha, out string tipo)
         {

@@ -19,6 +19,7 @@ namespace AppAvaliacao
         private int p_matricula;
         private string p_email;
         private string p_senha;
+        private string p_contraSenha;
         private string p_tipo = "P";
 
         public RegistrarProfessor ()
@@ -32,15 +33,20 @@ namespace AppAvaliacao
             p_matricula = 0;
             p_email = this.email.Text;
             p_senha = this.senha.Text;
-            if (usuarioDAO.Inserir(p_nome, p_matricula, p_email, p_senha, p_tipo))
+            p_contraSenha = this.ConfSenha.Text;
+
+            if (usuarioDAO.ValidarSenha(p_senha, p_contraSenha))
             {
-                Console.WriteLine("Usuário Cadastrado!");
+                if (usuarioDAO.Inserir(p_nome, p_matricula, p_email, p_senha, p_tipo))
+                {
+                    Console.WriteLine("Usuário Cadastrado!");
+                    await Navigation.PushAsync(new Login());
+                }
+                else
+                {
+                    Console.WriteLine("Erro ao cadastrar usuário!");
+                }
             }
-            else
-            {
-                Console.WriteLine("Erro ao cadastrar usuário!");
-            }
-            await Navigation.PushAsync(new Login());
         }
     }
 }

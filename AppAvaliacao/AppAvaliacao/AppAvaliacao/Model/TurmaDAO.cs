@@ -144,5 +144,40 @@ namespace AppAvaliacao.Model
             }
             return ListaTurmas;
         }
+        //
+
+        //Carrega lista de alunos de uma turma
+        public ObservableCollection<ListaAlunos> CarregaAlunos()
+        {
+            ObservableCollection<ListaAlunos> ListaAlunos = new ObservableCollection<ListaAlunos>();
+            Turma turma = Turma.Instancia;
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("SELECT  u.nome aluno, u.matricula FROM turma_aluno ta, usuario u WHERE u.id = ta.id_aluno AND ta.id_turma = @id", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id", turma.Id);
+                    conexao.Rdr = conexao.Comando.ExecuteReader();
+
+                    while (conexao.Rdr.Read())
+                    {
+                        ListaAlunos listaAlunos = new ListaAlunos();
+                        listaAlunos.Nome = conexao.Rdr["aluno"].ToString();
+                        listaAlunos.Matricula = Convert.ToInt32(conexao.Rdr["matricula"].ToString());
+                        ListaAlunos.Add(listaAlunos);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return ListaAlunos;
+        }
+        //
     }
 }
