@@ -10,6 +10,7 @@ namespace AppAvaliacao.Model
         private string nome;
         private String descricao;
         private DateTime dataEntrega;
+        private string status;
         private int id_aluno;
         private string arquivo;
         private static Tarefa instancia;
@@ -34,5 +35,6 @@ namespace AppAvaliacao.Model
         public int Id_aluno { get => id_aluno; set => id_aluno = value; }
         public string Arquivo { get => arquivo; set => arquivo = value; }
         public string Descricao { get => descricao; set => descricao = value; }
+        public string Status { get => status; set => status = value; }
     }
 }

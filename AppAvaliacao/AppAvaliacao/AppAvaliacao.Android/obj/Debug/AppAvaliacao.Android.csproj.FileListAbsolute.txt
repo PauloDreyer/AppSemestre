@@ -151,3 +151,8 @@ D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvali
 D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Professor.MeusDadosProfessor.xaml.g.cs
 D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Turma.TurmaAlunos.xaml.g.cs
 D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaProfessor.LiberarAvaliacao.xaml.g.cs
+D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaProfessor.AlterarTarefa.xaml.g.cs
+D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaProfessor.TarefaPostadas.xaml.g.cs
+D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaProfessor.Avaliacao.xaml.g.cs
+D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaProfessor.NotasTarefa.xaml.g.cs
+D:\AppSemestre\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Turma.NotasTurma.xaml.g.cs

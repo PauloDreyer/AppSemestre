@@ -10,10 +10,12 @@ namespace AppAvaliacao.Model
         private string nome;
         private int matricula;
         private string email;
+        private string nota;
 
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
         public int Matricula { get => matricula; set => matricula = value; }
         public string Email { get => email; set => email = value; }
+        public string Nota { get => nota; set => nota = value; }
     }
 }

@@ -4,7 +4,7 @@
              x:Class="AppAvaliacao.ExibirCodInsc">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="idInscricao" Text="{Binding IdInscricao}" TextColor="OrangeRed" FontSize="Large" HorizontalTextAlignment="Center" IsEnabled="False" />
+            <Label x:Name="idInscricao" Text="{Binding IdInscricao}" TextColor="OrangeRed" FontSize="40" HorizontalTextAlignment="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

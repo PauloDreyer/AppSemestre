@@ -1,4 +1,6 @@
 ﻿using AppAvaliacao.Model;
+using AppAvaliacao.ViewController.Tarefa;
+using AppAvaliacao.ViewController.Tarefa.TarefaProfessor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ namespace AppAvaliacao.ViewController.Tarefa
     public partial class MasterDetailTarefaProfessorDetail : ContentPage
     {
         private TarefaDAO tarefaDAO = new TarefaDAO();
+        private TarefaPostada tarefaPostada =TarefaPostada.Instancia;
 
         public MasterDetailTarefaProfessorDetail()
         {
@@ -24,19 +27,9 @@ namespace AppAvaliacao.ViewController.Tarefa
 
         private void LvTarefasPostadas_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var itemSelected = (ListaTurmas)e.SelectedItem;
-            /*
-            tarefa.Id = Convert.ToInt32(itemSelected.Id);
-            
-            if (usuario.Tipo.Equals("P"))
-            {
-                Navigation.PushAsync(new MasterDetailTarefaProfessor());
-            }
-            else
-            {
-                Navigation.PushAsync(new MasterDetailTarefaProfessor());
-            }
-            */
+            var itemSelected = (ListaTarefas)e.SelectedItem;
+            tarefaPostada.Id = Convert.ToInt32(itemSelected.IdTarefaPostada);
+            Navigation.PushAsync(new TarefaPostadas());
         }
     }
 }

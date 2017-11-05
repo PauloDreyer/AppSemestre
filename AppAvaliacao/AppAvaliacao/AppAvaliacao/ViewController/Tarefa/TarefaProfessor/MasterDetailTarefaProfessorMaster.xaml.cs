@@ -35,10 +35,9 @@ namespace AppAvaliacao.ViewController.Tarefa
                 MenuItems = new ObservableCollection<MasterDetailTarefaProfessorMenuItem>(new[]
                 {
                     new MasterDetailTarefaProfessorMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailTarefaProfessor)},
-                    //new MasterDetailTarefaProfessorMenuItem { Id = 1, Icon = "home.png", Title = "Editar Tarefa", TargetType = typeof(TurmaAlunos)},
+                    new MasterDetailTarefaProfessorMenuItem { Id = 1, Icon = "home.png", Title = "Editar Tarefa", TargetType = typeof(AlterarTarefa)},
                     new MasterDetailTarefaProfessorMenuItem { Id = 2, Icon = "home.png", Title = "Liberar/Bloquear Avaliação", TargetType = typeof(LiberarAvaliacao)},
-                    new MasterDetailTarefaProfessorMenuItem { Id = 3, Icon = "home.png", Title = "Notas", TargetType = typeof(MasterDetailProfessor)},
-                    new MasterDetailTarefaProfessorMenuItem { Id = 4, Icon = "home.png", Title = "Código de Inscrição", TargetType = typeof(ExibirCodInsc)},
+                    new MasterDetailTarefaProfessorMenuItem { Id = 3, Icon = "home.png", Title = "Notas", TargetType = typeof(NotasTarefa)},
                 });
             }
             

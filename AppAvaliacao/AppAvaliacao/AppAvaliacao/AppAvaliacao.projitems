@@ -10,12 +10,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Model\ListaAlunos.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ListaTarefasAlunos.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\TarefaPostada.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\TarefaPostadaDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Aluno\MeusDadosAluno.xaml.cs">
       <DependentUpon>MeusDadosAluno.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Professor\MeusDadosProfessor.xaml.cs">
       <DependentUpon>MeusDadosProfessor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\AlterarTarefa.xaml.cs">
+      <DependentUpon>AlterarTarefa.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\Avaliacao.xaml.cs">
+      <DependentUpon>Avaliacao.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\LiberarAvaliacao.xaml.cs">
@@ -35,6 +46,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\MasterDetailTarefaProfessorMenuItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\NotasTarefa.xaml.cs">
+      <DependentUpon>NotasTarefa.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\TarefaPostadas.xaml.cs">
+      <DependentUpon>TarefaPostadas.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\InscricaoTurma.xaml.cs">
@@ -113,6 +132,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\ConMySql.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\ListaTurmas.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Usuario.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\NotasTurma.xaml.cs">
+      <DependentUpon>NotasTurma.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Turma\NovaTurma.xaml.cs">
       <DependentUpon>NovaTurma.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -153,7 +176,6 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Imagens\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewController\App\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\App\TipoUser.xaml">
@@ -289,6 +311,36 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\LiberarAvaliacao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\AlterarTarefa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\TarefaPostadas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\Avaliacao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\NotasTarefa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Turma\NotasTurma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

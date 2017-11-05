@@ -179,5 +179,41 @@ namespace AppAvaliacao.Model
             return ListaAlunos;
         }
         //
+
+        //
+        public ObservableCollection<ListaAlunos> CarregaNotasTurma()
+        {
+            ObservableCollection<ListaAlunos> ListaAlunos = new ObservableCollection<ListaAlunos>();
+            Turma turma = Turma.Instancia;
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("SELECT  u.id, u.nome aluno, SUM(nt.nota) nota FROM notas_tarefas nt, tarefa t, usuario u WHERE nt.id_tarefa = t.id AND u.id = nt.id_aluno AND t.id_turma = @id_turma GROUP BY u.id, u.nome", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id_turma", turma.Id);
+                    conexao.Rdr = conexao.Comando.ExecuteReader();
+
+                    while (conexao.Rdr.Read())
+                    {
+                        ListaAlunos listaAlunos = new ListaAlunos();
+                        listaAlunos.Nome = conexao.Rdr["aluno"].ToString();
+                        listaAlunos.Nota = conexao.Rdr["nota"].ToString();
+                        ListaAlunos.Add(listaAlunos);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return ListaAlunos;
+        }
+        //
+        //
+        //SELECT id_aluno, SUM(nota) FROM `notas_tarefas` WHERE id_tarefa = 1 GROUP BY id_aluno
     }
 }

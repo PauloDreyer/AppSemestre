@@ -4,7 +4,7 @@
              x:Class="AppAvaliacao.ViewController.Tarefa.TarefaProfessor.LiberarAvaliacao">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Liberar/Bloquear Tarefa" TextColor="Blue" FontSize="Large"/>
+            <Label Text="Liberar/Bloquear Tarefa" TextColor="Blue" FontSize="Medium"/>
             <Picker x:Name="Selecao"
                     SelectedIndexChanged="Selecao_SelectedIndexChanged"/>
         </StackLayout>

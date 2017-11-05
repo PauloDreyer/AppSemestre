@@ -11,7 +11,6 @@ namespace AppAvaliacao.Model
         private ConMySql conexao = ConMySql.Instancia;
         private Turma turma = Turma.Instancia;
         private Tarefa tarefa = Tarefa.Instancia;
-        private string p_opcao;
 
         //Método para inserção de uma turma
         public bool Inserir(string nome, string descricao /*DateTime dataEntrega,*/, int turma)
@@ -52,7 +51,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT id, nome, descricao,'Aberta' status FROM tarefa WHERE id_turma = @id_turma", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT id, nome, descricao, status FROM tarefa WHERE id_turma = @id_turma", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_turma", turma.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
@@ -80,13 +79,15 @@ namespace AppAvaliacao.Model
         }
         //
 
-        //
+        // Retorna a Descrição da Tarefa
         public string getDescricaoTarefa()
         {
+            string status;
+
             if (conexao.getConexao())
             {
                 try{
-                    conexao.Comando = new MySqlCommand("SELECT nome, descricao,'Aberta' status FROM tarefa WHERE id = @id", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT nome, descricao, status FROM tarefa WHERE id = @id", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id", tarefa.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
                     
@@ -94,6 +95,15 @@ namespace AppAvaliacao.Model
                     {
                         tarefa.Nome = conexao.Rdr["nome"].ToString();
                         tarefa.Descricao = conexao.Rdr["descricao"].ToString();
+                        status = conexao.Rdr["status"].ToString();
+                        if(status.Equals("A"))
+                        {
+                            tarefa.Status = "Aberta";
+                        }
+                        else
+                        {
+                            tarefa.Status = "Cancelada";
+                        } 
                     }
 }
                 catch (Exception ex)
@@ -147,6 +157,7 @@ namespace AppAvaliacao.Model
                         tarefasPostadas.Id = conexao.Rdr["id_tarefa"].ToString();
                         tarefasPostadas.Alunos = tarefasPostadas.Alunos + conexao.Rdr["aluno"].ToString();
                         tarefasPostadas.Nome = conexao.Rdr["tarefa"].ToString();
+                        tarefasPostadas.IdTarefaPostada = Convert.ToInt32(conexao.Rdr["id_tarefa_postada"].ToString());
                         add_lista = 1;
                     }
 
@@ -171,6 +182,8 @@ namespace AppAvaliacao.Model
         //Método para Liberar/Bloquear Avaliação
         public bool LibBloAvaliacao(string opcao)
         {
+            string p_opcao;
+
             if (conexao.getConexao())
             {
 
@@ -201,6 +214,81 @@ namespace AppAvaliacao.Model
                 }
             }
             return true;
+        }
+        //
+
+        //
+        public bool AlterarTarefa(string nome, string descricao, string status)
+        {
+            string p_status = status;
+
+            if (conexao.getConexao())
+            {
+                if (p_status.Equals("Aberta"))
+                {
+                    p_status = "A";
+                }
+                else
+                {
+                    p_status = "C";
+                }
+                try
+                {
+                    conexao.Comando = new MySqlCommand("UPDATE tarefa SET nome = @nome, descricao = @descricao, status = @status WHERE id = @id", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@nome", nome);
+                    conexao.Comando.Parameters.AddWithValue("@descricao", descricao);
+                    conexao.Comando.Parameters.AddWithValue("@status", p_status);
+                    conexao.Comando.Parameters.AddWithValue("@id", tarefa.Id);
+                    conexao.Comando.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return false;
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return true;
+        }
+        //
+
+        // Retorna os Alunos de uma Tarefa
+        public ObservableCollection<ListaAlunos> CarregaNotasTarefas()
+        {
+            ObservableCollection<ListaAlunos> ListaAlunos = new ObservableCollection<ListaAlunos>();
+
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("SELECT u.nome, nt.nota FROM notas_tarefas nt, usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id_tarefa", tarefa.Id);
+                    conexao.Rdr = conexao.Comando.ExecuteReader();
+
+                    while (conexao.Rdr.Read())
+                    {
+
+                        ListaAlunos alunos = new ListaAlunos();
+                        alunos.Nome = conexao.Rdr["nome"].ToString();
+                        alunos.Nota = conexao.Rdr["nota"].ToString();
+                        ListaAlunos.Add(alunos);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return ListaAlunos;
         }
         //
     }
