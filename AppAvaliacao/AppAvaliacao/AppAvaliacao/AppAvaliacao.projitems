@@ -21,6 +21,33 @@
       <DependentUpon>MeusDadosProfessor.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\MasterDetailTarefaAluno.xaml.cs">
+      <DependentUpon>MasterDetailTarefaAluno.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\MasterDetailTarefaAlunoDetail.xaml.cs">
+      <DependentUpon>MasterDetailTarefaAlunoDetail.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\MasterDetailTarefaAlunoMaster.xaml.cs">
+      <DependentUpon>MasterDetailTarefaAlunoMaster.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\MasterDetailTarefaAlunoMenuItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\PostarTarefa.xaml.cs">
+      <DependentUpon>PostarTarefa.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\SelecionarAlunos.xaml.cs">
+      <DependentUpon>SelecionarAlunos.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\TarefasPostadasAlunos.xaml.cs">
+      <DependentUpon>TarefasPostadasAlunos.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaProfessor\AlterarTarefa.xaml.cs">
       <DependentUpon>AlterarTarefa.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -341,6 +368,42 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Turma\NotasTurma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\MasterDetailTarefaAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\MasterDetailTarefaAlunoMaster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\MasterDetailTarefaAlunoDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\PostarTarefa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\SelecionarAlunos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\TarefasPostadasAlunos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

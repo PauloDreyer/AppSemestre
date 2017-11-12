@@ -21,8 +21,13 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaProfessor
 
         private void Postar_Clicked(object sender, EventArgs e)
         {
-            tarefaPostadaDao.PostarComentario(this.Comentario.Text);
-            tarefaPostadaDao.PostarNotas(Convert.ToDecimal(this.Nota.Text));
+            tarefaPostadaDao.PostarComentario(Comentario.Text);
+            tarefaPostadaDao.PostarNotas(Convert.ToDecimal(LbNota.Text));
+        }
+
+        private void StNota_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            LbNota.Text = e.NewValue.ToString();
         }
     }
 }

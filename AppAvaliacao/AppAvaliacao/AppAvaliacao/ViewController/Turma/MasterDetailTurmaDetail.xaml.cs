@@ -1,5 +1,6 @@
 ﻿using AppAvaliacao.Model;
 using AppAvaliacao.ViewController.Tarefa;
+using AppAvaliacao.ViewController.Tarefa.TarefaAluno;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace AppAvaliacao
             }
             else
             {
-                Navigation.PushAsync(new MasterDetailTarefaProfessor());
+                Navigation.PushAsync(new MasterDetailTarefaAluno());
             }
         }
     }

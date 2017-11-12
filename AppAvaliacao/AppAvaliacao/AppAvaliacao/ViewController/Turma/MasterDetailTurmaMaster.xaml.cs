@@ -18,11 +18,14 @@ namespace AppAvaliacao
     public partial class MasterDetailTurmaMaster : ContentPage
     {
         public ListView ListView;
+        private Usuario usuario = Usuario.Instancia;
+        private static string tipoUsuario;
 
         public MasterDetailTurmaMaster()
         {
             InitializeComponent();
 
+            tipoUsuario = usuario.Tipo;
             BindingContext = new MasterDetailTurmaMasterViewModel();
             ListView = MenuItemsListView;
         }
@@ -33,14 +36,26 @@ namespace AppAvaliacao
             
             public MasterDetailTurmaMasterViewModel()
             {
-                MenuItems = new ObservableCollection<MasterDetailTurmaMenuItem>(new[]
+                if (tipoUsuario.Equals("P"))
                 {
-                    new MasterDetailTurmaMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailTurma)},
-                    new MasterDetailTurmaMenuItem { Id = 1, Icon = "home.png", Title = "Alunos", TargetType = typeof(TurmaAlunos)},
-                    new MasterDetailTurmaMenuItem { Id = 2, Icon = "home.png", Title = "Tarefas", TargetType = typeof(NovaTarefa)},
-                    new MasterDetailTurmaMenuItem { Id = 3, Icon = "home.png", Title = "Notas", TargetType = typeof(NotasTurma)},
-                    new MasterDetailTurmaMenuItem { Id = 4, Icon = "home.png", Title = "Código de Inscrição", TargetType = typeof(ExibirCodInsc)},
+                    MenuItems = new ObservableCollection<MasterDetailTurmaMenuItem>(new[]
+{
+                    new MasterDetailTurmaMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailTurma) },
+                    new MasterDetailTurmaMenuItem { Id = 1, Icon = "home.png", Title = "Alunos", TargetType = typeof(TurmaAlunos) },
+                    new MasterDetailTurmaMenuItem { Id = 2, Icon = "home.png", Title = "Tarefas", TargetType = typeof(NovaTarefa) },
+                    new MasterDetailTurmaMenuItem { Id = 3, Icon = "home.png", Title = "Notas", TargetType = typeof(NotasTurma) },
+                    new MasterDetailTurmaMenuItem { Id = 4, Icon = "home.png", Title = "Código de Inscrição", TargetType = typeof(ExibirCodInsc) },
                 });
+                }
+                else
+                {
+                    MenuItems = new ObservableCollection<MasterDetailTurmaMenuItem>(new[]
+{
+                    new MasterDetailTurmaMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailTurma) },
+                    new MasterDetailTurmaMenuItem { Id = 3, Icon = "home.png", Title = "Notas", TargetType = typeof(NotasTurma) },
+                });
+                }
+
             }
             
             #region INotifyPropertyChanged Implementation

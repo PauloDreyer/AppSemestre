@@ -4,14 +4,14 @@
              x:Class="AppAvaliacao.ViewController.Turma.NotasTurma">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Alunos/Notas" TextColor="Blue" FontSize="Medium"/>
+            <Label x:Name="LabelNota" Text="" TextColor="Blue" FontSize="Medium" HorizontalTextAlignment="Center"/>
             <ListView x:Name="LvNotasTurmas"
                   SeparatorColor="GreenYellow"
                   SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 <Label Text="{Binding Nome}" TextColor="Blue"/>
                                 <Label Text="{Binding Nota}" TextColor="LimeGreen"/>
                             </StackLayout>

@@ -8,7 +8,7 @@
                 <Label Text="Tarefa" TextColor="Blue" FontSize="Medium"/>
                 <Entry x:Name="nome" Text="{Binding nome}" Placeholder="Nome da Tarefa" />
                 <Label Text="Descrição da Tarefa" TextColor="Blue" FontSize="Medium"/>
-                <Entry x:Name="descricao" Text="{Binding decricao}" Placeholder="Descrição da Tarefa" HeightRequest="250" />
+                <Editor x:Name="descricao" Text="{Binding decricao}" HeightRequest="250" />
                 <Button x:Name="cadastrar" BackgroundColor="LimeGreen" Text="Cadastrar" TextColor="White" Clicked="onClickCadastar"/>
             </StackLayout>
         </StackLayout>

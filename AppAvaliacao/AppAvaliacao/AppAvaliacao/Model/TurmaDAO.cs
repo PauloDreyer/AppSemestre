@@ -155,15 +155,17 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT  u.nome aluno, u.matricula FROM turma_aluno ta, usuario u WHERE u.id = ta.id_aluno AND ta.id_turma = @id", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT u.id, u.nome aluno, u.matricula FROM turma_aluno ta, usuario u WHERE u.id = ta.id_aluno AND ta.id_turma = @id", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id", turma.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
                     while (conexao.Rdr.Read())
                     {
                         ListaAlunos listaAlunos = new ListaAlunos();
+                        listaAlunos.Id = Convert.ToInt32(conexao.Rdr["id"].ToString());
                         listaAlunos.Nome = conexao.Rdr["aluno"].ToString();
                         listaAlunos.Matricula = Convert.ToInt32(conexao.Rdr["matricula"].ToString());
+                        listaAlunos.Selecionado = false;
                         ListaAlunos.Add(listaAlunos);
                     }
                 }
@@ -213,7 +215,40 @@ namespace AppAvaliacao.Model
             return ListaAlunos;
         }
         //
+
         //
+        public ObservableCollection<ListaAlunos> CarregaNotasAluno()
+        {
+            ObservableCollection<ListaAlunos> ListaAlunos = new ObservableCollection<ListaAlunos>();
+            Turma turma = Turma.Instancia;
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("SELECT SUM(nt.nota) nota FROM notas_tarefas nt, tarefa t WHERE nt.id_tarefa = t.id AND t.id_turma = @id_turma  AND nt.id_aluno = @id_aluno", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id_turma", turma.Id);
+                    conexao.Comando.Parameters.AddWithValue("@id_aluno", usuario.Id);
+                    conexao.Rdr = conexao.Comando.ExecuteReader();
+
+                    while (conexao.Rdr.Read())
+                    {
+                        ListaAlunos listaAlunos = new ListaAlunos();
+                        listaAlunos.Nome = "";
+                        listaAlunos.Nota = conexao.Rdr["nota"].ToString();
+                        ListaAlunos.Add(listaAlunos);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return ListaAlunos;
+        }
         //SELECT id_aluno, SUM(nota) FROM `notas_tarefas` WHERE id_tarefa = 1 GROUP BY id_aluno
     }
 }

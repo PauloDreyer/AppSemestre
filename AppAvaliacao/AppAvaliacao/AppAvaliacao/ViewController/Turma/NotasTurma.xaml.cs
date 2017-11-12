@@ -14,11 +14,21 @@ namespace AppAvaliacao.ViewController.Turma
 	public partial class NotasTurma : ContentPage
 	{
         private TurmaDAO turmaDao = new TurmaDAO();
+        private Usuario usuario = Usuario.Instancia;
 
         public NotasTurma ()
 		{
 			InitializeComponent ();
-            LvNotasTurmas.ItemsSource = turmaDao.CarregaNotasTurma();
+            if (usuario.Tipo.Equals("P"))
+            {
+                LabelNota.Text = "Alunos/Notas";
+                LvNotasTurmas.ItemsSource = turmaDao.CarregaNotasTurma();
+            }
+            else
+            {
+                LabelNota.Text = "Nota";
+                LvNotasTurmas.ItemsSource = turmaDao.CarregaNotasAluno();
+            }
 		}
 	}
 }

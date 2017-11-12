@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.ComponentModel;
 using AppAvaliacao.Model;
-using Java.Lang;
-using Android.Widget;
 
 namespace AppAvaliacao
 {
@@ -33,7 +31,7 @@ namespace AppAvaliacao
             p_email = this.email.Text;
             p_senha = this.senha.Text;
             if (usuarioDAO.Logar(p_email, p_senha, out p_tipo))
-                {
+            {
                 if (p_tipo == "P")
                 {
                     await Navigation.PushAsync(new MasterDetailProfessor());
