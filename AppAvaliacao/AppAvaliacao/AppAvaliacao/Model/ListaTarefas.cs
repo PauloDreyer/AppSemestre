@@ -13,6 +13,7 @@ namespace AppAvaliacao.Model
         private string idTurma;
         private string alunos;
         private int idTarefaPostada;
+        private bool liberar;
         
         private static ListaTarefas instancia;
 
@@ -38,5 +39,6 @@ namespace AppAvaliacao.Model
         public string Descricao { get => descricao; set => descricao = value; }
         public string Alunos { get => alunos; set => alunos = value; }
         public int IdTarefaPostada { get => idTarefaPostada; set => idTarefaPostada = value; }
+        public bool Liberar { get => liberar; set => liberar = value; }
     }
 }

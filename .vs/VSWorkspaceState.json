@@ -4,8 +4,9 @@
     "\\AppAvaliacao",
     "\\AppAvaliacao\\AppAvaliacao",
     "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao",
-    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao.Android"
+    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao.Android",
+    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao\\Model"
   ],
-  "SelectedNode": "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao",
+  "SelectedNode": "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao.Android\\AppAvaliacao.Android.csproj",
   "PreviewInSolutionExplorer": false
 }

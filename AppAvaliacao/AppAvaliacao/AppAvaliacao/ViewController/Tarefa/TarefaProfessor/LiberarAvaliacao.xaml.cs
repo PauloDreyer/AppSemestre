@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,20 +19,24 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaProfessor
         public LiberarAvaliacao ()
 		{
 			InitializeComponent ();
-            Selecao.Items.Add("Sim");
-            Selecao.Items.Add("Não");
+            SLiberar.BindingContext = tarefaDAO.getTarefaLiberada().Liberar;
         }
 
-        private void Selecao_SelectedIndexChanged(object sender, EventArgs e)
+        private void SLiberar_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            var opcao = Selecao.Items[Selecao.SelectedIndex];
-            if (tarefaDAO.LibBloAvaliacao(opcao))
+            if (SLiberar.IsToggled)
             {
-                Console.WriteLine("Tarefa Liberada!");
+                if (tarefaDAO.LibBloAvaliacao(true))
+                {
+                    Console.WriteLine("Tarefa Liberada!");
+                }
             }
             else
             {
-                Console.WriteLine("Tarefa Não Liberada!");
+                if (tarefaDAO.LibBloAvaliacao(false))
+                {
+                    Console.WriteLine("Tarefa Não Liberada!");
+                }
             }
         }
     }

@@ -34,6 +34,7 @@ D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.ComponentModel.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.Reflection.dll
+D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.ObjectModel.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.Diagnostics.Debug.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.IO.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.Globalization.dll
@@ -45,7 +46,6 @@ D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.Text.Encoding.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.Threading.Tasks.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.Resources.ResourceManager.dll
-D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.ObjectModel.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.Net.Http.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.Runtime.Serialization.dll
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\android\assets\System.ServiceModel.Internals.dll

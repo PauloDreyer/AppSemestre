@@ -5,8 +5,10 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Liberar/Bloquear Tarefa" TextColor="Blue" FontSize="Medium"/>
-            <Picker x:Name="Selecao"
-                    SelectedIndexChanged="Selecao_SelectedIndexChanged"/>
+            <Switch x:Name="SLiberar"
+                IsToggled="{Binding Liberar}"
+                PropertyChanged="SLiberar_PropertyChanged"
+             />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

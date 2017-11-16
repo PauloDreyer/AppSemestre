@@ -11,10 +11,11 @@
                   ItemSelected="LvSelecaoAlunos_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <SwitchCell 
+                        <SwitchCell
                             Text="{Binding Nome}"
                             Height="20"
-                            On="{Binding Selecionado}"
+                            On="False"
+                            OnChanged="SwitchCell_OnChanged"
                         />
                     </DataTemplate>
                 </ListView.ItemTemplate>

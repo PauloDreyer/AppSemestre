@@ -189,15 +189,61 @@ namespace AppAvaliacao.Model
         }
         //
 
+        //
+        public ListaTarefas getTarefaLiberada()
+        {
+
+            ListaTarefas Liberada = new ListaTarefas();
+            string v_liberada = "N";
+
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("SELECT lib_avaliacao WHERE id = @id", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id", tarefa.Id);
+                    conexao.Rdr = conexao.Comando.ExecuteReader();
+
+                    while (conexao.Rdr.Read())
+                    {
+                        v_liberada = conexao.Rdr["lib_avaliacao"].ToString();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+
+                if (v_liberada.Equals("S"))
+                {
+                    Liberada.Liberar = true;
+                }
+                else
+                {
+                    Liberada.Liberar = false;
+                }
+            }
+
+            Liberada.Liberar = false;
+
+            return Liberada;
+        }
+        //
+
         //Método para Liberar/Bloquear Avaliação
-        public bool LibBloAvaliacao(string opcao)
+        public bool LibBloAvaliacao(bool opcao)
         {
             string p_opcao;
 
             if (conexao.getConexao())
             {
 
-                if (opcao.Equals("Sim"))
+                if (opcao)
                 {
                     p_opcao = "S";
                 }

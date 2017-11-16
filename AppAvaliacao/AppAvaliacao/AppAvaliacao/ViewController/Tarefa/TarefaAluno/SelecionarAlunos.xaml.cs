@@ -14,9 +14,9 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaAluno
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SelecionarAlunos : ContentPage
 	{
-        ObservableCollection<int> ListaAlunos = new ObservableCollection<int>();
+        ObservableCollection<int> ListarAlunos = new ObservableCollection<int>();
         TurmaDAO turmaDao = new TurmaDAO();
-
+        string v;
         public SelecionarAlunos ()
 		{
 			InitializeComponent ();
@@ -28,13 +28,13 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaAluno
         {
             if(e.Value)
             {  
-                ListaAlunos.Add(Convert.ToInt32(LvSelecaoAlunos.Id.ToString()));
+                 ListarAlunos.Remove(Convert.ToInt32(LvSelecaoAlunos.Id.ToString()));
             }
             else
             {
-                if (ListaAlunos.Contains(Convert.ToInt32(LvSelecaoAlunos.Id.ToString())))
+                if (ListarAlunos.Contains(Convert.ToInt32(LvSelecaoAlunos.Id.ToString())))
                 {
-                    ListaAlunos.Remove(Convert.ToInt32(LvSelecaoAlunos.Id.ToString()));
+                    ListarAlunos.Remove(Convert.ToInt32(LvSelecaoAlunos.Id.ToString()));
                 }
             }
             
