@@ -12,7 +12,7 @@
                 <Entry x:Name="senha" Text="{Binding senha}" Placeholder="Senha" IsPassword="True" />
                 <Button x:Name="logar" BackgroundColor="LimeGreen" Text="Logar" TextColor="White" Clicked="onClickLogar"/>
                 <Button x:Name="registrar" BackgroundColor="Blue" Text="Registre-se" TextColor="White" Clicked="onClickRegistar"/>
-                <Label x:Name="esqueciSenha" Text="Esqueci minha Senha" TextColor="CadetBlue" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                <Button x:Name="esqueciSenha" BackgroundColor="CadetBlue" Text="Esqueci minha Senha" TextColor="White" Clicked="esqueciSenha_Clicked"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

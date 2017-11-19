@@ -35,7 +35,9 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaAluno
                 {
                     new MasterDetailTarefaAlunoMenuItem { Id = 0, Icon = "home.png", Title = "Home", TargetType = typeof(MasterDetailTarefaAluno)},
                     new MasterDetailTarefaAlunoMenuItem { Id = 1, Icon = "home.png", Title = "Postar/Alterar Tarefa", TargetType = typeof(PostarTarefa)},
-                    new MasterDetailTarefaAlunoMenuItem { Id = 1, Icon = "home.png", Title = "Avaliar Tarefas", TargetType = typeof(TarefasPostadasAlunos)},
+                    new MasterDetailTarefaAlunoMenuItem { Id = 2, Icon = "home.png", Title = "Participar da Tarefa", TargetType = typeof(ParticiparTarefa)},
+                    new MasterDetailTarefaAlunoMenuItem { Id = 3, Icon = "home.png", Title = "Avaliar Tarefas", TargetType = typeof(TarefasPostadasAlunos)},
+                    new MasterDetailTarefaAlunoMenuItem { Id = 4, Icon = "home.png", Title = "Notas", TargetType = typeof(NotasTarefasGrupo)},
                 });
             }
             

@@ -17,6 +17,10 @@
       <DependentUpon>MeusDadosAluno.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\App\EsqueciSenha.xaml.cs">
+      <DependentUpon>EsqueciSenha.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Professor\MeusDadosProfessor.xaml.cs">
       <DependentUpon>MeusDadosProfessor.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -34,6 +38,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\MasterDetailTarefaAlunoMenuItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\NotasTarefasGrupo.xaml.cs">
+      <DependentUpon>NotasTarefasGrupo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\ParticiparGrupo.xaml.cs">
+      <DependentUpon>ParticiparGrupo.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\ParticiparTarefa.xaml.cs">
+      <DependentUpon>ParticiparTarefa.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\PostarTarefa.xaml.cs">
@@ -202,7 +218,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Imagens\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewController\App\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\App\TipoUser.xaml">
@@ -404,6 +419,30 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\TarefasPostadasAlunos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\ParticiparTarefa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\ParticiparGrupo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\Tarefa\TarefaAluno\NotasTarefasGrupo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ViewController\App\EsqueciSenha.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -153,5 +153,31 @@ namespace AppAvaliacao.Model
             return true;
         }
         //
+
+        //
+        public bool AlterarSenha(string email, string senha)
+        {
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("UPDATE usuario SET senha = @senha WHERE email = @email", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@email", email);
+                    conexao.Comando.Parameters.AddWithValue("@senha", EncryptSenha(senha));
+                    conexao.Comando.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return true;
+        }
+        //
     }
 }

@@ -14,15 +14,26 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaProfessor
 	public partial class Avaliacao : ContentPage
 	{
         private TarefaPostadaDAO tarefaPostadaDao = new TarefaPostadaDAO();
-		public Avaliacao ()
+        TarefaDAO tarefaDao = new TarefaDAO();
+        bool tarefaLiberada;
+
+        public Avaliacao ()
 		{
 			InitializeComponent ();
-		}
+            tarefaLiberada = tarefaDao.GetTarefaLiberada();
+            if (!tarefaLiberada)
+            {
+                TarefaLib.Text = "A tarefa não liberada para avaliação!";
+            }
+        }
 
         private void Postar_Clicked(object sender, EventArgs e)
         {
-            tarefaPostadaDao.PostarComentario(Comentario.Text);
-            tarefaPostadaDao.PostarNotas(Convert.ToDecimal(LbNota.Text));
+            if (tarefaLiberada)
+            {
+                tarefaPostadaDao.PostarComentario(Comentario.Text);
+                tarefaPostadaDao.PostarNotas(Convert.ToDecimal(LbNota.Text));
+            }
         }
 
         private void StNota_ValueChanged(object sender, ValueChangedEventArgs e)

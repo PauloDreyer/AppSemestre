@@ -19,7 +19,6 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaProfessor
         public LiberarAvaliacao ()
 		{
 			InitializeComponent ();
-            SLiberar.BindingContext = tarefaDAO.getTarefaLiberada().Liberar;
         }
 
         private void SLiberar_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

@@ -5,8 +5,11 @@
     "\\AppAvaliacao\\AppAvaliacao",
     "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao",
     "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao.Android",
-    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao\\Model"
+    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao\\Model",
+    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao\\ViewController",
+    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao\\ViewController\\Professor",
+    "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao\\ViewController\\Tarefa"
   ],
-  "SelectedNode": "\\AppAvaliacao\\AppAvaliacao\\AppAvaliacao.Android\\AppAvaliacao.Android.csproj",
+  "SelectedNode": "\\AppAvaliacao\\AppAvaliacao.sln",
   "PreviewInSolutionExplorer": false
 }

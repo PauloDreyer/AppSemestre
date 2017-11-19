@@ -247,3 +247,7 @@ D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAval
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaAluno.PostarTarefa.xaml.g.cs
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaAluno.SelecionarAlunos.xaml.g.cs
 D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaAluno.TarefasPostadasAlunos.xaml.g.cs
+D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaAluno.ParticiparTarefa.xaml.g.cs
+D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaAluno.ParticiparGrupo.xaml.g.cs
+D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.Tarefa.TarefaAluno.NotasTarefasGrupo.xaml.g.cs
+D:\AppSemestre2\AppAvaliacao\AppAvaliacao\AppAvaliacao.Android\obj\Debug\AppAvaliacao.Droid.ViewController.App.EsqueciSenha.xaml.g.cs

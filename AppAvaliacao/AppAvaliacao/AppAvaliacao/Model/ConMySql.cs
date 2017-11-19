@@ -17,9 +17,9 @@ namespace AppAvaliacao.Model
         private Usuario usuario = Usuario.Instancia;
         private string server = "sql10.freemysqlhosting.net";
         private UInt32 porta = 3306;
-        private string dataBase = "sql10204599";
-        private string userId = "sql10204599";
-        private string password = "mzJjzPESby";
+        private string dataBase = "sql10205976";
+        private string userId = "sql10205976";
+        private string password = "DJn8j3SDqJ";
 
         public MySqlCommand Comando { get => comando; set => comando = value; }
         public MySqlDataReader Rdr { get => rdr; set => rdr = value; }

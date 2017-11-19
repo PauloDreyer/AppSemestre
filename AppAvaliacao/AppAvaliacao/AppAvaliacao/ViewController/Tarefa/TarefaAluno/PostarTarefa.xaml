@@ -7,8 +7,8 @@
             <StackLayout Padding="0 ,20, 0, 0">
                 <Label Text="Tarefa" TextColor="Blue" FontSize="Medium"/>
                 <Editor x:Name="Tarefa" Text="{Binding tarefa}" HeightRequest="250" />
-                <Button x:Name="SelecionarAlunos" BackgroundColor="Blue" Text="Selecionar Alunos" TextColor="White" Clicked="SelecionarAlunos_Clicked"/>
                 <Button x:Name="Postar" BackgroundColor="LimeGreen" Text="Postar" TextColor="White" Clicked="Postar_Clicked"/>
+                <Label x:Name="TarefaLib" Text="" TextColor="Red" FontSize="Medium"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

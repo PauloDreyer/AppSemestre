@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.ComponentModel;
 using AppAvaliacao.Model;
+using AppAvaliacao.ViewController.App;
 
 namespace AppAvaliacao
 {
@@ -48,6 +49,9 @@ namespace AppAvaliacao
              await Navigation.PushAsync(new TipoUser());
         }
 
-
+        async void esqueciSenha_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EsqueciSenha());
+        }
     }
 }

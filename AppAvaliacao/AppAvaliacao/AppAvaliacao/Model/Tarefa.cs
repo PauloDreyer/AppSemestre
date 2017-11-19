@@ -14,6 +14,7 @@ namespace AppAvaliacao.Model
         private int id_aluno;
         private string arquivo;
         private static Tarefa instancia;
+        private string lib_avaliacao;
 
         private Tarefa() { }
 
@@ -36,5 +37,6 @@ namespace AppAvaliacao.Model
         public string Arquivo { get => arquivo; set => arquivo = value; }
         public string Descricao { get => descricao; set => descricao = value; }
         public string Status { get => status; set => status = value; }
+        public string Lib_avaliacao { get => lib_avaliacao; set => lib_avaliacao = value; }
     }
 }

@@ -190,10 +190,48 @@ namespace AppAvaliacao.Model
         //
 
         //
-        public ListaTarefas getTarefaLiberada()
+        public bool GetStatusTarefa()
         {
+            string v_status = "C";
 
-            ListaTarefas Liberada = new ListaTarefas();
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("SELECT status WHERE id = @id", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id", tarefa.Id);
+                    conexao.Rdr = conexao.Comando.ExecuteReader();
+
+                    while (conexao.Rdr.Read())
+                    {
+                        v_status = conexao.Rdr["lib_avaliacao"].ToString();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+
+            if (v_status.Equals("A"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //
+
+        //
+        public bool GetTarefaLiberada()
+        {
             string v_liberada = "N";
 
             if (conexao.getConexao())
@@ -218,20 +256,16 @@ namespace AppAvaliacao.Model
                 {
                     conexao.CloseConnection();
                 }
-
-                if (v_liberada.Equals("S"))
-                {
-                    Liberada.Liberar = true;
-                }
-                else
-                {
-                    Liberada.Liberar = false;
-                }
             }
 
-            Liberada.Liberar = false;
-
-            return Liberada;
+            if (v_liberada.Equals("S"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         //
 
@@ -323,6 +357,44 @@ namespace AppAvaliacao.Model
                 {
                     conexao.Comando = new MySqlCommand("SELECT u.nome, nt.nota FROM notas_tarefas nt, usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_tarefa", tarefa.Id);
+                    conexao.Rdr = conexao.Comando.ExecuteReader();
+
+                    while (conexao.Rdr.Read())
+                    {
+
+                        ListaAlunos alunos = new ListaAlunos();
+                        alunos.Nome = conexao.Rdr["nome"].ToString();
+                        alunos.Nota = conexao.Rdr["nota"].ToString();
+                        ListaAlunos.Add(alunos);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    conexao.CloseConnection();
+                }
+            }
+            return ListaAlunos;
+        }
+        //
+
+        // Retorna as Notas de uma Tarefa do Grupo ou do Aluno
+        public ObservableCollection<ListaAlunos> CarregaNotasTarefasGrupo()
+        {
+            ObservableCollection<ListaAlunos> ListaAlunos = new ObservableCollection<ListaAlunos>();
+
+            if (conexao.getConexao())
+            {
+                try
+                {
+                    conexao.Comando = new MySqlCommand("SELECT u.nome ,nt.nota FROM notas_tarefas nt ,usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa AND u.id IN (SELECT ta.id_aluno FROM tarefas_alunos ta WHERE ta.id_tarefa_postada IN (SELECT tal.id_tarefa_postada FROM tarefas_alunos tal ,tarefa_postada tp WHERE tp.id_tarefa = nt.id_tarefa AND tal.id_tarefa_postada = tp.id AND tal.id_aluno = @id_aluno))", conexao.Conexao);
+                    conexao.Comando.Parameters.AddWithValue("@id_tarefa", tarefa.Id);
+                    conexao.Comando.Parameters.AddWithValue("@id_aluno", usuario.Id);
+
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
                     while (conexao.Rdr.Read())

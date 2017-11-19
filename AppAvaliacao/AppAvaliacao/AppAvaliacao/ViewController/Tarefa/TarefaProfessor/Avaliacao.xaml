@@ -11,6 +11,7 @@
                 <Label Text="Comentário" TextColor="Blue" HorizontalTextAlignment="Start" FontSize="Medium"/>
                 <Editor x:Name="Comentario" Text="{Binding Comentario}" FontSize="Medium" HeightRequest="150"/>
                 <Button x:Name="Postar" BackgroundColor="LimeGreen" Text="Postar" TextColor="White" Clicked="Postar_Clicked"/>
+                <Label x:Name="TarefaLib" Text="" TextColor="Red" FontSize="Medium"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

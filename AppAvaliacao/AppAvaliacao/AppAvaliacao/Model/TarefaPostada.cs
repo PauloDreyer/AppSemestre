@@ -12,7 +12,7 @@ namespace AppAvaliacao.Model
         private string comentario;
         private static TarefaPostada instancia;
 
-        private TarefaPostada() { }
+        public TarefaPostada() { }
 
         public static TarefaPostada Instancia
         {
