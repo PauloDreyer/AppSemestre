@@ -14,11 +14,13 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaAluno
     public partial class MasterDetailTarefaAlunoDetail : ContentPage
     {
         TarefaPostadaDAO tarefaPostadaDAO = new TarefaPostadaDAO();
+        private TarefaDAO tarefaDAO = new TarefaDAO();
         TarefaPostada tarefaPostada = TarefaPostada.Instancia;
 
         public MasterDetailTarefaAlunoDetail()
         {
             InitializeComponent();
+            labelDescricao.Text = tarefaDAO.getDescricaoTarefa();
             tarefaPostada = tarefaPostadaDAO.GetTarefaPostada();
             Tarefa.Text = tarefaPostada.Tarefa;
         }

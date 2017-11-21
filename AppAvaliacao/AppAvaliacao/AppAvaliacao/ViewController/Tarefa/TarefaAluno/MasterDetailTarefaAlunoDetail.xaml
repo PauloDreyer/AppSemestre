@@ -4,6 +4,7 @@
              x:Class="AppAvaliacao.ViewController.Tarefa.TarefaAluno.MasterDetailTarefaAlunoDetail"
              Title="Tarefa">
   <StackLayout Padding="10">
-    <Label x:Name="Tarefa" Text=""/>
+        <Label x:Name="labelDescricao" Text="" TextColor="DarkBlue" FontSize="Medium"/>
+        <Label x:Name="Tarefa" Text=""/>
   </StackLayout>
 </ContentPage>

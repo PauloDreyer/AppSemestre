@@ -136,13 +136,13 @@ namespace AppAvaliacao.Model
                 {
                     if (usuario.Tipo.Equals("P"))
                     {
-                        conexao.Comando = new MySqlCommand("SELECT t.id id_tarefa,t.nome tarefa, tp.id id_tarefa_postada, u.nome aluno FROM tarefa t, tarefa_postada tp, tarefas_alunos ta, usuario u WHERE tp.id_tarefa = t.id AND ta.id_tarefa_postada = tp.id AND u.id = ta.id_aluno AND t.id = @id", conexao.Conexao);
+                        conexao.Comando = new MySqlCommand("SELECT t.id id_tarefa,t.nome tarefa, tp.id id_tarefa_postada, u.nome aluno FROM tarefa t, tarefa_postada tp, tarefas_alunos ta, usuario u WHERE tp.id_tarefa = t.id AND ta.id_tarefa_postada = tp.id AND u.id = ta.id_aluno AND t.id = @id ORDER BY tp.id", conexao.Conexao);
                         conexao.Comando.Parameters.AddWithValue("@id", tarefa.Id);
                         conexao.Rdr = conexao.Comando.ExecuteReader();
                     }
                     else
                     {
-                        conexao.Comando = new MySqlCommand("SELECT t.id id_tarefa,t.nome tarefa, tp.id id_tarefa_postada, u.nome aluno FROM tarefa t, tarefa_postada tp, tarefas_alunos ta, usuario u WHERE tp.id_tarefa = t.id AND ta.id_tarefa_postada = tp.id AND u.id = ta.id_aluno AND t.id = @id AND NOT EXISTS(SELECT NULL FROM tarefas_alunos tal WHERE tal.id_aluno = @id_aluno AND tal.id_tarefa_postada = ta.id_tarefa_postada)", conexao.Conexao);
+                        conexao.Comando = new MySqlCommand("SELECT t.id id_tarefa,t.nome tarefa, tp.id id_tarefa_postada, u.nome aluno FROM tarefa t, tarefa_postada tp, tarefas_alunos ta, usuario u WHERE tp.id_tarefa = t.id AND ta.id_tarefa_postada = tp.id AND u.id = ta.id_aluno AND t.id = @id AND NOT EXISTS(SELECT NULL FROM tarefas_alunos tal WHERE tal.id_aluno = @id_aluno AND tal.id_tarefa_postada = ta.id_tarefa_postada) ORDER BY tp.id", conexao.Conexao);
                         conexao.Comando.Parameters.AddWithValue("@id", tarefa.Id);
                         conexao.Comando.Parameters.AddWithValue("@id_aluno", usuario.Id);
                         conexao.Rdr = conexao.Comando.ExecuteReader();
@@ -158,6 +158,7 @@ namespace AppAvaliacao.Model
                             ListaTarefasPostadas.Add(tarefasPostadas);
                             tarefasPostadas = new ListaTarefas();
                             add_lista = 0;
+                            v_id_tafefa_postada_aux = Convert.ToInt32(conexao.Rdr["id_tarefa_postada"].ToString());
                         }
 
                         if (tarefasPostadas.Alunos != null)
@@ -198,13 +199,13 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT status WHERE id = @id", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT status FROM tarefa WHERE id = @id", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id", tarefa.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
                     while (conexao.Rdr.Read())
                     {
-                        v_status = conexao.Rdr["lib_avaliacao"].ToString();
+                        v_status = conexao.Rdr["status"].ToString();
                     }
 
                 }
@@ -238,7 +239,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT lib_avaliacao WHERE id = @id", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT lib_avaliacao FROM tarefa WHERE id = @id", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id", tarefa.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
@@ -355,7 +356,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT u.nome, nt.nota FROM notas_tarefas nt, usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT u.id, u.nome, SUM(nt.nota) nota FROM notas_tarefas nt, usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa GROUP BY u.id, u.nome", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_tarefa", tarefa.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
@@ -391,7 +392,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT u.nome ,nt.nota FROM notas_tarefas nt ,usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa AND u.id IN (SELECT ta.id_aluno FROM tarefas_alunos ta WHERE ta.id_tarefa_postada IN (SELECT tal.id_tarefa_postada FROM tarefas_alunos tal ,tarefa_postada tp WHERE tp.id_tarefa = nt.id_tarefa AND tal.id_tarefa_postada = tp.id AND tal.id_aluno = @id_aluno))", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT u.id, u.nome, SUM(nt.nota) nota FROM notas_tarefas nt ,usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa AND u.id IN (SELECT ta.id_aluno FROM tarefas_alunos ta WHERE ta.id_tarefa_postada IN (SELECT tal.id_tarefa_postada FROM tarefas_alunos tal ,tarefa_postada tp WHERE tp.id_tarefa = nt.id_tarefa AND tal.id_tarefa_postada = tp.id AND tal.id_aluno = @id_aluno)) GROUP BY u.id, u.nome", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_tarefa", tarefa.Id);
                     conexao.Comando.Parameters.AddWithValue("@id_aluno", usuario.Id);
 

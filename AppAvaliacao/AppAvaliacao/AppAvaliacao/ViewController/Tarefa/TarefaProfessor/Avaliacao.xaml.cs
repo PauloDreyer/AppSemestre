@@ -1,4 +1,5 @@
 ﻿using AppAvaliacao.Model;
+using AppAvaliacao.ViewController.Tarefa.TarefaAluno;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaProfessor
 	public partial class Avaliacao : ContentPage
 	{
         private TarefaPostadaDAO tarefaPostadaDao = new TarefaPostadaDAO();
+        Usuario usuario = Usuario.Instancia;
         TarefaDAO tarefaDao = new TarefaDAO();
         bool tarefaLiberada;
 
@@ -33,6 +35,15 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaProfessor
             {
                 tarefaPostadaDao.PostarComentario(Comentario.Text);
                 tarefaPostadaDao.PostarNotas(Convert.ToDecimal(LbNota.Text));
+            }
+
+            if (usuario.Tipo.Equals("P"))
+            {
+                Navigation.PushAsync(new MasterDetailTarefaProfessor());
+            }
+            else
+            {
+                Navigation.PushAsync(new MasterDetailTarefaAluno());
             }
         }
 

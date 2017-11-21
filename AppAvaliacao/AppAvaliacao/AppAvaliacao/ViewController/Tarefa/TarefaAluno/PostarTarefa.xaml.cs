@@ -22,9 +22,9 @@ namespace AppAvaliacao.ViewController.Tarefa.TarefaAluno
         public PostarTarefa ()
 		{
 			InitializeComponent ();
-            if(tarefaPostadaDAO.ExisteTarefaPostada())
+            statusTarefa = tarefaDao.GetStatusTarefa();
+            if (tarefaPostadaDAO.ExisteTarefaPostada())
             {
-                statusTarefa = tarefaDao.GetStatusTarefa();
                 tarefaPostada = tarefaPostadaDAO.GetTarefaPostada();
                 id_tarefa_postada = tarefaPostada.Id;
                 Tarefa.Text = tarefaPostada.Tarefa;
