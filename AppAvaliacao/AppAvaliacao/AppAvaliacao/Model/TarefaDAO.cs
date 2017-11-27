@@ -356,7 +356,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT u.id, u.nome, SUM(nt.nota) nota FROM notas_tarefas nt, usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa GROUP BY u.id, u.nome", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT u.id, u.nome, ROUND(SUM(nt.nota) / COUNT(nt.nota), 2) nota FROM notas_tarefas nt, usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa GROUP BY u.id, u.nome", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_tarefa", tarefa.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
@@ -392,7 +392,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT u.id, u.nome, SUM(nt.nota) nota FROM notas_tarefas nt ,usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa AND u.id IN (SELECT ta.id_aluno FROM tarefas_alunos ta WHERE ta.id_tarefa_postada IN (SELECT tal.id_tarefa_postada FROM tarefas_alunos tal ,tarefa_postada tp WHERE tp.id_tarefa = nt.id_tarefa AND tal.id_tarefa_postada = tp.id AND tal.id_aluno = @id_aluno)) GROUP BY u.id, u.nome", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT u.id, u.nome, ROUND(SUM(nt.nota) / COUNT(nt.nota), 2) nota FROM notas_tarefas nt ,usuario u WHERE u.id = nt.id_aluno AND nt.id_tarefa = @id_tarefa AND u.id IN (SELECT ta.id_aluno FROM tarefas_alunos ta WHERE ta.id_tarefa_postada IN (SELECT tal.id_tarefa_postada FROM tarefas_alunos tal ,tarefa_postada tp WHERE tp.id_tarefa = nt.id_tarefa AND tal.id_tarefa_postada = tp.id AND tal.id_aluno = @id_aluno)) GROUP BY u.id, u.nome", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_tarefa", tarefa.Id);
                     conexao.Comando.Parameters.AddWithValue("@id_aluno", usuario.Id);
 

@@ -191,7 +191,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT  u.id, u.nome aluno, SUM(nt.nota) nota FROM notas_tarefas nt, tarefa t, usuario u WHERE nt.id_tarefa = t.id AND u.id = nt.id_aluno AND t.id_turma = @id_turma GROUP BY u.id, u.nome", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT  u.id, u.nome aluno, ROUND(SUM(nt.nota) / COUNT(nt.nota), 2) nota FROM notas_tarefas nt, tarefa t, usuario u WHERE nt.id_tarefa = t.id AND u.id = nt.id_aluno AND t.id_turma = @id_turma GROUP BY u.id, u.nome", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_turma", turma.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
 
@@ -225,7 +225,7 @@ namespace AppAvaliacao.Model
             {
                 try
                 {
-                    conexao.Comando = new MySqlCommand("SELECT SUM(nt.nota) nota FROM notas_tarefas nt, tarefa t WHERE nt.id_tarefa = t.id AND t.id_turma = @id_turma  AND nt.id_aluno = @id_aluno", conexao.Conexao);
+                    conexao.Comando = new MySqlCommand("SELECT ROUND(SUM(nt.nota) / COUNT(nt.nota), 2) nota FROM notas_tarefas nt, tarefa t WHERE nt.id_tarefa = t.id AND t.id_turma = @id_turma  AND nt.id_aluno = @id_aluno", conexao.Conexao);
                     conexao.Comando.Parameters.AddWithValue("@id_turma", turma.Id);
                     conexao.Comando.Parameters.AddWithValue("@id_aluno", usuario.Id);
                     conexao.Rdr = conexao.Comando.ExecuteReader();
@@ -249,6 +249,5 @@ namespace AppAvaliacao.Model
             }
             return ListaAlunos;
         }
-        //SELECT id_aluno, SUM(nota) FROM `notas_tarefas` WHERE id_tarefa = 1 GROUP BY id_aluno
     }
 }
